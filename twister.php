@@ -10,7 +10,8 @@
 		</form>
 		<?php
 		if(isset($_POST["Aantal"])){
-			print("Hello world");
+			$spelers = $_POST["aantal"];
+			print $spelers;
 		}
 		else{
 			print("you failed");
