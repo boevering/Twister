@@ -4,12 +4,12 @@
 		<title>TWISTER</title>
 	</head>
 	<body>
-		<form action="twister.php" method="GET">
+		<form action="twister.php" method="POST">
 			Aantal Spelers<input type="number" name="Aantal">
 			<input type="submit">
 		</form>
 		<?php
-		if(isset($_GET["Aantal"])){
+		if(isset($_POST["Aantal"])){
 			print("Hello world");
 		}
 		else{
