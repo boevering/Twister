@@ -19,11 +19,11 @@
 			}
 			print('</form>');
 		}
-*/		else{
+		else{
 			print("Vul formulier in!");
 		}
 		
-		?>
+*/		?>
 
 
 	</body>
