@@ -7,7 +7,7 @@
 			Aantal Spelers<input type="number" name="Aantal">
 			<input type="submit">
 		</form>
-		<?php\
+		<?php
 		if (isset($Aantal)){
 			spelers = $_POST["Aantal"];
 			print('<form action="game.php" method="POST">');
