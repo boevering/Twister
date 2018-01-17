@@ -10,8 +10,8 @@
 		</form>
 		<?php
 		if(isset($_POST["Aantal"])){
-			$spelers = $_POST["aantal"];
-			print($spelers);
+			$spelers = $_POST["Aantal"];
+			print("aantal spelers". $spelers);
 		}
 		else{
 			print("you failed");
