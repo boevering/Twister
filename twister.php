@@ -13,7 +13,7 @@
 			$spelers = $_POST["Aantal"];
 			print("aantal spelers ". $spelers);
 			print('<form action="game.php" method="POST">');
-			for($i=1, $i <= $spelers, $i++){
+			for($i=1; $i <= $spelers; $i++){
 				print('Kleuren(gescheiden door komma)<input type="text" name="kleuren">');
 			}
 			print('</form>');
