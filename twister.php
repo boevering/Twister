@@ -11,7 +11,7 @@
 		<?php
 		if(isset($_POST["Aantal"])){
 			$spelers = $_POST["aantal"];
-			print $spelers;
+			print($spelers);
 		}
 		else{
 			print("you failed");
