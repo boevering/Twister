@@ -8,7 +8,7 @@
 			<input type="submit">
 		</form>
 		<?php\
-		if isset($Aantal){
+		if (isset($Aantal)){
 			spelers = $_POST["Aantal"];
 			for ($i=1, $i<= "spelers", $i++){
 				print(	
