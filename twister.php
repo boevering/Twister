@@ -16,7 +16,7 @@
 								Kleuren speler $i<input type="text" name="speler$i">
 					');
 			}
-			print
+			print('</form>');
 		}
 		else{
 			print("Vul formulier in!");
