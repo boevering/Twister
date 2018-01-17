@@ -16,6 +16,7 @@
 			for($i=1; $i <= $spelers; $i++){
 				print('Kleuren(gescheiden door komma)<input type="text" name="kleuren"><br>');
 			}
+			print('<input type="submit"');
 			print('</form>');
 		}
 		else{
