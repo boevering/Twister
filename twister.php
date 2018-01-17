@@ -8,7 +8,14 @@
 			Aantal Spelers<input type="number" name="Aantal">
 			<input type="submit">
 		</form>
-
+		<?php
+		if(isset($_GET["Aantal"])){
+			print("Hello world");
+		}
+		else{
+			print("you failed");
+		}
+		?>
 
 
 	</body>
