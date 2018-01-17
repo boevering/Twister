@@ -8,23 +8,7 @@
 			Aantal Spelers<input type="number" name="Aantal">
 			<input type="submit">
 		</form>
-		<?php 
-		blub = false;
-		if (blub){
-			$spelers = $_POST["Aantal"];
-			print('<form action="game.php" method="POST">');
-			for ($i=1, $i<= "spelers", $i++){
-				print('	
-								Kleuren speler $i<input type="text" name="speler$i">
-					');
-			}
-			print('</form>');
-		}
-		else{
-			print("Vul formulier in!");
-		}
-		
-		?>
+
 
 
 	</body>
