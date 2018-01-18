@@ -1,5 +1,5 @@
 <?php 
-require_once("Connections/twister.php");
+require_once("./Connections/twister.php");
 echo("Kaas");
 ?>
 <!DOCTYPE html>
