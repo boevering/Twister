@@ -43,8 +43,15 @@ require_once("functions.php");
 			print('<input type="hidden" name="amountcolors" value='.$amountcolors.'>');
 			print('</form>');
 			#doorsturen array(playerid => array(userid, kleur1, kleur2, kleur3))
+			
+			
+			#opvragen laatste gameID
+			$MaxGameID = "SELECT `gameid` FROM `game` ORDER BY `gameid` DESC LIMIT 1;";
+			$dbGM = mysqli_query($dbtwister, $MaxGameID);
+			$row = mysqli_fetch_array($dbGM);
+			echo $row['gameid'];
 		}
-		DBtest($dbtwister);
+		#DBtest($dbtwister);
 		?>
 		
 
