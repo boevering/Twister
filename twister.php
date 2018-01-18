@@ -1,6 +1,5 @@
 <?php 
-require_once("./Connections/twister.php");
-echo("Kaas");
+require_once("Connections/twister.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +29,7 @@ echo("Kaas");
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('</form>');
 		}
-		print($dbtwister)
+		print($dbtwister);
 		?>
 	</body>
 </html>
