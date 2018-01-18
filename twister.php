@@ -54,7 +54,6 @@ require_once("functions.php");
 			#opvragen laatste gameID
 			$MaxGameID = "SELECT `gameid` FROM `game` ORDER BY `gameid` DESC LIMIT 1;";
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
-			echo $row['gameid'];
 			$row = mysqli_fetch_array($dbGM);
 			$NewGameID = $row['gameid']+1;
 			
@@ -71,12 +70,13 @@ require_once("functions.php");
 			for($i=1; $i <= $amountplayers; $i++){
 				unset($kleur);
 				foreach($speler[$i] as $color){
-					$kleur .= ",".$color;
+					$kleur .= $color.",";
 				}
-				print($kleur);
+				
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
-				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$kleur."', '', '');";
+				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
 				print_r($InsertGame."<br>");
+				$dbGM = mysqli_query($dbtwister, $InsertGame);
 			}
 				
 		}
