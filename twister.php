@@ -50,10 +50,6 @@ require_once("functions.php");
 		if(isset($_POST["userid1"])){
 			$amountplayers = $_POST["AmountPlayers"];
 			$amountcolors = $_POST["AmountColors"];
-			#opvragen laatste gameID
-			$MaxGameID = "SELECT `gameid` FROM `game` ORDER BY `gameid` DESC LIMIT 1;";
-			$dbGM = mysqli_query($dbtwister, $MaxGameID);
-			$row = mysqli_fetch_array($dbGM);
 			$hashing = $_POST."". date("Y-m-d H:i:s")."". rand(0, 9999);
 			$NewGameID = hash('ripemd160', $hashing);
 			
