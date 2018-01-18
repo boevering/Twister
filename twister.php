@@ -61,7 +61,7 @@ require_once("functions.php");
 			$x = 1;
 			$q = 1;
 			for($i=1; $i <= $amountplayers; $i++){
-					for($z=$x; $z <= $amountcolors * $i; $z++){
+					for($z=1; $z <= $amountcolors * $i; $z++){
 							$kleuren[$q]  = $_POST["color".$z];
 							$q++;
 						print("<br> q=".$q);
