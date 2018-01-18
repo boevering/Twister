@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>TWISTER</title>
+		<title>Twister</title>
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
