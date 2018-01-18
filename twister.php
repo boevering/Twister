@@ -37,7 +37,7 @@ require_once("functions.php");
 				print("</select><br>");
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" name="color'.$p.'"><br>');
-					$p++
+					$p++;
 				}
 				print("<br>");
 			}
@@ -55,12 +55,15 @@ require_once("functions.php");
 			$NewGameID = row['gameid']+1;
 			
 			$x = 1;
+			$p = 1;
 			$speler = array();
+			$kleuren = array();
 			for($i=1; $i <= $amountplayers; $i++){
 					for($z=$x; $z < $amountcolors * $i; $z++){
-							$kleuren[] =>$_POST["color".$z];
+							$kleuren = array($p => $_POST["color".$z]);
+							$p++;
 					}
-				$speler[$i] => $kleuren;
+				$speler = array($i => $kleuren);
 			}
 			print_r($speler);
 			
