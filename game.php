@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<?php
-		print($_POST);
+		print_r($_POST);
 		?>
 	</body>
 </html>
