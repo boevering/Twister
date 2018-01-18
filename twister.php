@@ -10,7 +10,7 @@
 			<input type="submit">
 		</form>
 		<?php
-		if(isset($_POST["Aantal"] && $_POST["AantalKleuren"])){
+		if(isset($_POST["Aantal"])){
 			$spelers = $_POST["Aantal"];
 			print("<br>Aantal spelers: ". $spelers. "<br>");
 			print('<form action="game.php" method="POST">');
