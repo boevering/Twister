@@ -13,8 +13,13 @@ require_once("functions.php");
 		<?php
 		$gameid = $_GET["gameid"];
 		
-		$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'".$gameid."'";';
+		$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'";';
 		$db = mysqli_query($dbtwister, $queryusers);
+		print("klaas");
+		print($db);
+		while ( $d=mysqli_fetch_assoc($db)) {
+  					print_r($d);
+				}
 		
 		
 		print_r(ColorPlayer($test, 1));
