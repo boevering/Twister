@@ -70,8 +70,7 @@ require_once("functions.php");
 						print("<br> i=".$i);
 						print("<br> color5".$_POST["color5"]);
 					}
-				$speler = array($i => $kleuren);
-				$x = $i * $amountcolors;
+				$speler[$i] = $kleuren;
 			}
 			print("Speler: ");
 			print_r($speler);
