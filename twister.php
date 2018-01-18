@@ -27,7 +27,8 @@ require_once("functions.php");
 			for($i=1; $i <= $amountplayers; $i++){
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
-				while ( $d=mysqli_fetch_assoc($dbtwister)) {
+				$db = mysqli_query($dbtwister, $queryusers);
+				while ( $d=mysqli_fetch_assoc($db)) {
 					echo "kaas";
   					echo "<option value='{".$d['firstname']."}'>".$d['firstname']."</option>";
 				}
