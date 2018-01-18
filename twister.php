@@ -67,6 +67,7 @@ require_once("functions.php");
 						print("<br> q=".$q);
 						print("<br> Z=".$z);
 						print("<br> i=".$i);
+						print("<br> color5".$color5);
 					}
 				$speler = array($i => $kleuren);
 				$x = $i * $amountcolors;
