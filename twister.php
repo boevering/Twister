@@ -19,11 +19,6 @@
 			print('<input type="submit"');
 			print('</form>');
 		}
-		else{
-			print("you failed");
-		}
 		?>
-
-
 	</body>
 </html>
