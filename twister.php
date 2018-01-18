@@ -16,8 +16,8 @@
 			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
 			print('<form action="game.php" method="POST">');
 			for($i=1; $i <= $amountplayers; $i++){
+				print("<h1>Speler: ".$i."</h1>");
 				for($o=1; $o <= $amountcolors; $o++){
-					print("<h1>Speler: ".$i."</h1>");
 					print('Kleur '.$o.': <input type="text" name="player'.$i.'color'.$o.'"><br>');
 				}
 				print("<br>");
