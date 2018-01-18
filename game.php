@@ -6,8 +6,8 @@
 	<body>
 		<?php
 		print_r($_POST);
-		print_r($_POST["amountplayers"]);
-		if (isset($_POST["amountplayers"])){
+		print_r($_POST["spelid"]);
+		if (isset($_POST["spelid"])){
 			
 		}
 		else {
