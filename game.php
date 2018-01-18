@@ -26,7 +26,7 @@ require_once("functions.php");
 			while ( $d=mysqli_fetch_assoc($dbusers)) {
 					print_r($d);
 					print_r(ColorPlayer($d["colors"], 1));
-					print("kaas");
+					print("<br>kaas");
 			}
 		}
 		
