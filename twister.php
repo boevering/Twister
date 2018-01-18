@@ -55,8 +55,10 @@ require_once("functions.php");
 			$MaxGameID = "SELECT `gameid` FROM `game` ORDER BY `gameid` DESC LIMIT 1;";
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
 			$row = mysqli_fetch_array($dbGM);
-			$hasing = $_POST."". date("Y-m-d H:i:s")."". rand(0, 9999);
-			$NewGameID = hash('CRYPT_SHA256', $hasing);			
+			$hashing = $_POST."". date("Y-m-d H:i:s")."". rand(0, 9999);
+			$NewGameID = hash('CRYPT_SHA256', $hashing);
+			
+			print($NewGameID);
 
 			$q=1;
 			for($i=1; $i <= $amountplayers; $i++){
