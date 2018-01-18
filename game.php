@@ -6,6 +6,7 @@
 	<body>
 		<?php
 		print_r($_POST);
+		print_r($_POST["amountplayers"]);
 		?>
 	</body>
 </html>
