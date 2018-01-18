@@ -22,7 +22,7 @@
 				}
 				print("<br>");
 			}
-			print('<input type="submit value="Doorgaan""');
+			print('<input type="submit" value="Doorgaan"');
 			print('</form>');
 		}
 		?>
