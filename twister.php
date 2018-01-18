@@ -66,6 +66,7 @@ require_once("functions.php");
 							$p++;
 					}
 				$speler = array($i => $kleuren);
+				$x = $i * $amountcolors;
 			}
 			print("Speler: ");
 			print_r($speler);
