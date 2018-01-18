@@ -5,11 +5,11 @@
 	</head>
 	<body>
 		<?php
-		print("GET");
-		print_r($_GET);
-		print("POST");
-		print_r($_POST);
-
+			print(hash('ripemd160', 'The quick brown fox jumped over the lazy dog.')); 
+			
+			
+			
+		}
 
 		?>
 	</body>
