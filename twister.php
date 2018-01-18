@@ -64,11 +64,6 @@ require_once("functions.php");
 					for($z=1; $z <= $amountcolors; $z++){
 							$kleuren[$z]  = $_POST["color".$q];
 							$q++;
-							
-						print("<br> q=".$q);
-						print("<br> Z=".$z);
-						print("<br> i=".$i);
-						print("<br> color5".$_POST["color5"]);
 					}
 				$speler[$i] = $kleuren;
 			}
@@ -81,7 +76,8 @@ require_once("functions.php");
 			
 			for($i=1; $i <= $amountplayers; $i++){
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
-				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', 'zwart,geel,blauw', '', '');";
+				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$speler[$i]."', '', '');";
+				print_r($InsertGame);
 			}
 				
 		}
