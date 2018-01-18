@@ -30,9 +30,9 @@ require_once("functions.php");
 				$db = mysqli_query($dbtwister, $queryusers);
 				print ('<select name="names">');
 				while ( $d=mysqli_fetch_assoc($db)) {
-  					echo "<option value='{".$d['firstname']."}'>".$d['firstname']."</option>";
+  					echo "<option value='{".$d['firstname']." ".$d['prefix']." ".$d['lastname']."}'>".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
-				print("</select>");
+				print("</select><br>");
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" name="player'.$i.'color'.$o.'"><br>');
 				}
