@@ -74,7 +74,7 @@ require_once("functions.php");
 				}
 				
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
-				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
+				$InsertGame = "INSERT INTO `game` (`gameid`,`playerid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$i."',".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
 				$dbGM = mysqli_query($dbtwister, $InsertGame);
 			}
 			echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
