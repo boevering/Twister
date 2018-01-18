@@ -13,7 +13,8 @@ require_once("functions.php");
 		<?php
 		$gameid = $_GET["gameid"];
 		
-		$test = "21, 136, 152,";
+		$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'".$gameid."'";';
+		$db = mysqli_query($dbtwister, $queryusers);
 		
 		
 		print_r(ColorPlayer($test, 1));
