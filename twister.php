@@ -52,7 +52,7 @@ require_once("functions.php");
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
 			echo $row['gameid'];
 			$row = mysqli_fetch_array($dbGM);
-			$NewGameID = row['gameid']+1;
+			$NewGameID = $row['gameid']+1;
 			
 			$x = 1;
 			$p = 1;
