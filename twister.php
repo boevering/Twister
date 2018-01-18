@@ -56,10 +56,8 @@ require_once("functions.php");
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
 			$row = mysqli_fetch_array($dbGM);
 			$hashing = $_POST."". date("Y-m-d H:i:s")."". rand(0, 9999);
-			$NewGameID = hash('CRYPT_SHA256', $hashing);
+			$NewGameID = hash('ripemd160', $hashing);
 			
-			print($NewGameID);
-
 			$q=1;
 			for($i=1; $i <= $amountplayers; $i++){
 					for($z=1; $z <= $amountcolors; $z++){
@@ -77,11 +75,9 @@ require_once("functions.php");
 				
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
 				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
-				print_r($InsertGame."<br>");
 				$dbGM = mysqli_query($dbtwister, $InsertGame);
-				#echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
 			}
-				
+			echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
 		}
 		#DBtest($dbtwister);
 		?>

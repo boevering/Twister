@@ -20,8 +20,4 @@ function InsertGame() {
 	
 }
 
-function GetDropdownListUser() {
-	#SELECT * FROM `users`
-}
-
 ?>
