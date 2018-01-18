@@ -20,4 +20,11 @@ function InsertGame() {
 	
 }
 
+#kleuren scheiden
+function ColorPlayer($colors, $player){
+	$color_array = explode(',', $colors);
+	return $color_array;
+	
+}
+
 ?>
