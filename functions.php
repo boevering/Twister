@@ -23,7 +23,7 @@ function InsertGame() {
 #kleuren scheiden
 function ColorPlayer($colors, $player){
 	$dirk (explode(",", $colors));
-	print($print);
+	print_r($print);
 	
 }
 
