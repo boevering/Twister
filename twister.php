@@ -77,8 +77,7 @@ require_once("functions.php");
 				$InsertGame = "INSERT INTO `game` (`gameid`,`playerid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$i."', ".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
 				$dbGM = mysqli_query($dbtwister, $InsertGame);
 			}
-			echo $InsertGame;
-			#echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
+			echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
 		}
 		#DBtest($dbtwister);
 		?>
