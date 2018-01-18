@@ -11,6 +11,7 @@
 		</form>
 		<?php
 		if(isset($_POST["AmountPlayers"], $_POST["AmountColors"])){
+			# check if post values are set, if not, don't display, if is set, show this.
 			$amountplayers = $_POST["AmountPlayers"];
 			$amountcolors = $_POST["AmountColors"];
 			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
