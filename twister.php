@@ -39,6 +39,7 @@ require_once("functions.php");
 		}
 		DBtest($dbtwister);
 		?>
+		
 
 	</body>
 </html>
