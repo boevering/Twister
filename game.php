@@ -16,7 +16,7 @@ require_once("functions.php");
 		$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'";';
 		$db = mysqli_query($dbtwister, $queryusers);
 		print("klaas");
-		print($db);
+		print($queryusers);
 		while ( $d=mysqli_fetch_assoc($db)) {
   					print_r($d);
 				}
