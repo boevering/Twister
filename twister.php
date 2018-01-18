@@ -33,6 +33,7 @@ require_once("functions.php");
 			}
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('<input type="hidden" name="amountplayers" value='.$amountplayers.'>');
+			print('<input type="hidden" name="amountplayers" value='.$amountcolors.'>');
 			print('</form>');
 			#doorsturen array(playerid => array(userid, kleur1, kleur2, kleur3))
 		}
