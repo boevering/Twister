@@ -70,7 +70,7 @@ require_once("functions.php");
 			for($i=1; $i <= $amountplayers; $i++){
 				unset($kleur);
 				foreach($speler[$i] as $color){
-					$kleur .= ",".$color;
+					$kleur .= $color.",";
 				}
 				
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
