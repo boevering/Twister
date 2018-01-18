@@ -56,8 +56,6 @@ require_once("functions.php");
 			
 			$x = 1;
 			$p = 1;
-			$speler = array();
-			$kleuren = array();
 			for($i=1; $i <= $amountplayers; $i++){
 					for($z=$x; $z < $amountcolors * $i; $z++){
 							$kleuren = array($p => $_POST["color".$z]);
@@ -66,6 +64,8 @@ require_once("functions.php");
 				$speler = array($i => $kleuren);
 			}
 			print_r($speler);
+			print_r($kleuren);
+			print("kaas");
 			
 			
 			for($i=1; $i <= $amountplayers; $i++){
