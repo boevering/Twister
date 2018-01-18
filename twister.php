@@ -7,7 +7,7 @@
 		<form action="twister.php" method="POST">
 			Aantal Spelers? <input type="number" name="AmountPlayers"> <br>
 			Aantal Kleuren per speler? <input type="number" name="AmountColors"> <br>
-			<input type="submit">
+			<input type="submit" value="Doorgaan">
 		</form>
 		<?php
 		if(isset($_POST["AmountPlayers"], $_POST["AmountColors"])){
@@ -22,7 +22,7 @@
 				}
 				print("<br>");
 			}
-			print('<input type="submit"');
+			print('<input type="submit value="Doorgaan""');
 			print('</form>');
 		}
 		?>
