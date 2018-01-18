@@ -58,12 +58,13 @@ require_once("functions.php");
 			$row = mysqli_fetch_array($dbGM);
 			$NewGameID = $row['gameid']+1;
 			
-			$x = 1;
+
 			$q = 1;
 			for($i=1; $i <= $amountplayers; $i++){
-					for($z=1; $z <= $amountcolors * $i; $z++){
-							$kleuren[$q]  = $_POST["color".$z];
+					for($z=1; $z <= $amountcolors; $z++){
+							$kleuren[$q]  = $_POST["color".$q];
 							$q++;
+							
 						print("<br> q=".$q);
 						print("<br> Z=".$z);
 						print("<br> i=".$i);
