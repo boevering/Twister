@@ -28,10 +28,11 @@ require_once("functions.php");
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
 				$db = mysqli_query($dbtwister, $queryusers);
+				print ('<select name="names">');
 				while ( $d=mysqli_fetch_assoc($db)) {
-					echo "kaas";
   					echo "<option value='{".$d['firstname']."}'>".$d['firstname']."</option>";
 				}
+				print("</select>");
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" name="player'.$i.'color'.$o.'"><br>');
 				}
