@@ -32,7 +32,7 @@ require_once("functions.php");
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('</form>');
 		}
-		$TestDatabase()
+		$TestDatabase();
 		?>
 
 	</body>
