@@ -76,7 +76,7 @@ require_once("functions.php");
 			
 			for($i=1; $i <= $amountplayers; $i++){
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
-				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$speler[$i]."', '', '');";
+				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$speler["1"]."', '', '');";
 				print_r($InsertGame);
 			}
 				
