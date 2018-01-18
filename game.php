@@ -16,7 +16,7 @@ require_once("functions.php");
 		$test = "21, 136, 152,";
 		
 		
-		print(ColorPlayer($test, 1));
+		print_r(ColorPlayer($test, 1));
 		
 	
 			
