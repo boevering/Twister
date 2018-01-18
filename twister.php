@@ -67,11 +67,11 @@ require_once("functions.php");
 					}
 				$speler = array($i => $kleuren);
 			}
-			print("Speler");
+			print("Speler: ");
 			print_r($speler);
-			print("<br>kleuren");
+			print("<br>Kleuren: ");
 			print_r($kleuren);
-			print("kaas");
+			print("<br>kaas");
 			
 			
 			for($i=1; $i <= $amountplayers; $i++){
