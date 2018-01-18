@@ -19,6 +19,7 @@
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Speler: '.$i.', Kleur '.$o.': <input type="text" name="player'.$i.'color'.$o.'"><br>');
 				}
+				print("<br>");
 			}
 			print('<input type="submit"');
 			print('</form>');
