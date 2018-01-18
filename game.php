@@ -19,7 +19,7 @@ require_once("functions.php");
 		
 		
 		for($i=1; $i <= $playersmax; $i++){
-			$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.' AND `playerid` ="'.$i.'";';
+			$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'" AND `playerid` ="'.$i.'";';
 			$dbusers = mysqli_query($dbtwister, $queryusers);
 			print ("<br>kaas");
 			print($queryusers);
