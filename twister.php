@@ -28,7 +28,7 @@ require_once("functions.php");
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
 				$db = mysqli_query($dbtwister, $queryusers);
-				print ('<select name="names">');
+				print ('<select name="userid">');
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
