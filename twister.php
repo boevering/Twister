@@ -68,7 +68,7 @@ require_once("functions.php");
 				$speler[$i] = $kleuren;
 			}
 			print("Speler: ");
-			print_r($speler);
+			print_r($speler["1"]);
 			print("<br>Kleuren: ");
 			print_r($kleuren);
 			print("<br>kaas");
