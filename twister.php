@@ -41,12 +41,16 @@ require_once("functions.php");
 				}
 				print("<br>");
 			}
+			print('<input type="hidden" name="AmountPlayers" value="'.$amountplayers.'"');
+			print('<input type="hidden" name="AmountColors" value="'.$amountcolors.'"');
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('</form>');
 			#doorsturen array(playerid => array(userid, kleur1, kleur2, kleur3))
 		}
 			
 		if(isset($_POST["userid1"])){
+			$amountplayers = $_POST["AmountPlayers"];
+			$amountcolors = $_POST["AmountColors"];
 			#opvragen laatste gameID
 			$MaxGameID = "SELECT `gameid` FROM `game` ORDER BY `gameid` DESC LIMIT 1;";
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
