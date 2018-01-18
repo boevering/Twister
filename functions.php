@@ -1,8 +1,6 @@
 <?php
-# Let's make sure the database is connected, use $dbtwister as database (file on server, NOT on Github!)
-require_once("Connections/twister.php");
 
-function DBtest() {
+function DBtest($dbtwister) {
 		if (!$dbtwister) {
 			print_r($dbtwister);
 			echo "Error: Unable to connect to MySQL." . PHP_EOL;

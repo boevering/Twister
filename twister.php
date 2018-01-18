@@ -37,7 +37,7 @@ require_once("functions.php");
 			print('</form>');
 			#doorsturen array(playerid => array(userid, kleur1, kleur2, kleur3))
 		}
-		DBtest();
+		DBtest($dbtwister);
 		?>
 
 	</body>
