@@ -23,7 +23,9 @@ function InsertGame() {
 #kleuren scheiden
 function ColorPlayer($colors, $player){
 	$colors_array = (explode(",", $colors));
+	$colors_array = array_pop($colors_array);
 	return($colors_array);
+
 	
 }
 
