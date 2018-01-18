@@ -25,7 +25,7 @@ require_once("functions.php");
 			$amountplayers = $_POST["AmountPlayers"];
 			$amountcolors = $_POST["AmountColors"];
 			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
-			print('<form action="#" method="POST">');
+			print('<form action="twister.php" method="POST">');
 			for($i=1; $i <= $amountplayers; $i++){
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
