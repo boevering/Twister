@@ -66,22 +66,15 @@ require_once("functions.php");
 							$q++;
 					}
 				$speler[$i] = $kleuren;
-			}
-			print("Speler: ");
-			print_r($speler);
-			print("<br>Kleuren: ");
-			print_r($kleuren);
-			print("<br>kaas");
-			
+			}			
 			
 			for($i=1; $i <= $amountplayers; $i++){
 				foreach($speler[$i] as $color){
 					$kleur .= ",".$color;
 				}
-				print($kleur);
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
 				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$kleur."', '', '');";
-				print_r($InsertGame);
+				print_r($InsertGame."<br>");
 			}
 				
 		}
