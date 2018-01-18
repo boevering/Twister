@@ -1,3 +1,6 @@
+<?php 
+require_once("Connections/twister.php")
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,6 +29,7 @@
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('</form>');
 		}
+		print($dbtwister)
 		?>
 	</body>
 </html>
