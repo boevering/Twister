@@ -32,6 +32,7 @@ require_once("functions.php");
 				print("<br>");
 			}
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
+			print('<input type="hidden" value='.$amountplayers.'>');
 			print('</form>');
 		}
 		$this->$TestDatabase();
