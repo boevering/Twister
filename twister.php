@@ -5,8 +5,8 @@
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
-			Aantal Spelers?<input type="number" name="Aantal">
-			Aantal Kleuren per speler?<input type="number" name="AantalKleuren">
+			Aantal Spelers?<input type="number" name="Aantal"> </ br>
+			Aantal Kleuren per speler?<input type="number" name="AantalKleuren"> </ br>
 			<input type="submit">
 		</form>
 		<?php
