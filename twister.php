@@ -6,9 +6,8 @@ require_once("functions.php");
 ?>
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
 	<head>
+		<meta charset="utf-8">
 		<title>Twister</title>
 	</head>
 	<body>
