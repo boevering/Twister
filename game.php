@@ -24,10 +24,10 @@ require_once("functions.php");
 
 			while ( $d=mysqli_fetch_assoc($dbusers)) {
 
-					print_r(ColorPlayer($d["colors"], 1));
-
+					$colors_player.$i = (ColorPlayer($d["colors"], 1));
 			}
 		}
+		print_r($colors_player3);
 		
 	
 			
