@@ -72,6 +72,7 @@ require_once("functions.php");
 				foreach($speler[$i] as $color){
 					$kleur .= ",".$color;
 				}
+				print($kleur);
 				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
 				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', '".$kleur."', '', '');";
 				print_r($InsertGame."<br>");
