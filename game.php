@@ -5,14 +5,12 @@
 	</head>
 	<body>
 		<?php
+		print("GET");
+		print_r($_GET);
+		print("POST");
 		print_r($_POST);
-		print_r($_POST["spelid"]);
-		if (isset($_POST["spelid"])){
-			
-		}
-		else {
-			print("<H1>DIE</H1>");
-		}
+
+
 		?>
 	</body>
 </html>
