@@ -4,8 +4,10 @@ require_once("Connections/twister.php");
 # Lets use a seperate file for functions
 require_once("functions.php");
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
 	<head>
 		<title>Twister</title>
 	</head>
