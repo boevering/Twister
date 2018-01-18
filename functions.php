@@ -15,4 +15,13 @@ function DBtest($dbtwister) {
 		mysqli_close($dbtwister);
 		}
 
+function InsertGame() {
+	#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
+	
+}
+
+function GetDropdownListUser() {
+	#SELECT * FROM `users`
+}
+
 ?>

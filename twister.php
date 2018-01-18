@@ -26,6 +26,10 @@ require_once("functions.php");
 			print('<form action="game.php" method="POST">');
 			for($i=1; $i <= $amountplayers; $i++){
 				print("<h1>Speler: ".$i."</h1>");
+				$queryusers = "SELECT * FROM `users`;";
+				while ( $d=mysqli_fetch_assoc($dbtwister)) {
+  					echo "<option value='{".$d['firstname']."}'>".$d['firstname']."</option>";
+				}
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" name="player'.$i.'color'.$o.'"><br>');
 				}
