@@ -59,12 +59,12 @@ require_once("functions.php");
 			$NewGameID = $row['gameid']+1;
 			
 			$x = 1;
-			$p = 1;
+			$q = 1;
 			for($i=1; $i <= $amountplayers; $i++){
 					for($z=$x; $z <= $amountcolors * $i; $z++){
-							$kleuren[$p]  = $_POST["color".$z];
-							$p++;
-						print("p=".$p);
+							$kleuren[$q]  = $_POST["color".$z];
+							$q++;
+						print("<br> q=".$q);
 						print("<br> Z=".$z);
 						print("<br> i=".$i);
 					}
