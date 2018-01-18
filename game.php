@@ -13,7 +13,7 @@ require_once("functions.php");
 		<?php
 		$gameid = $_GET["gameid"];
 		
-		$test = "21, 136, 152,";
+		$test = "21, 136, 152, 126";
 		
 		
 		print_r(ColorPlayer($test, 1));
