@@ -12,17 +12,21 @@ require_once("functions.php");
 	<body>
 		<?php
 		$gameid = $_GET["gameid"];
-		#SELECT `playerid` FROM `game` WHERE `gameid` = "26d1cab1aa1e48489b971d4b558f3fe3ecd363eb" ORDER BY `playerid` DESC LIMIT 1';
+		$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
+		$dbplayers = mysqli_query($dbtwister, $queryplayers);
+		$players = mysqli_fetch_array($dbplayers);
+		$playersmax = $players["playerid"];
 		
+		
+		for($i=1; $i <= $playersmax; $i++){
 			$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.' AND `playerid` ='.$i.'";';
-			$db = mysqli_query($dbtwister, $queryusers);
+			$dbusers = mysqli_query($dbtwister, $queryusers);
 
-			while ( $d=mysqli_fetch_assoc($db)) {
+			while ( $d=mysqli_fetch_assoc($dbusers)) {
 						print_r($d);
 					}
-
-		
-		print_r(ColorPlayer($test, 1));
+			print_r(ColorPlayer($test, 1));
+		}
 		
 	
 			
