@@ -35,7 +35,7 @@ require_once("functions.php");
 			print('<input type="hidden" name="amountplayers" value='.$amountplayers.'>');
 			print('</form>');
 		}
-		$this->$TestDatabase();
+		$this->$TestDatabase;
 		?>
 
 	</body>
