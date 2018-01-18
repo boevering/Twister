@@ -23,9 +23,9 @@ require_once("functions.php");
 			$dbusers = mysqli_query($dbtwister, $queryusers);
 
 			while ( $d=mysqli_fetch_assoc($dbusers)) {
-						print_r($d);
-						print_r(ColorPlayer($d["colors"], 1));
-						print("kaas");
+					print_r($d);
+					print_r(ColorPlayer($d["colors"], 1));
+					print("kaas");
 			}
 		}
 		
