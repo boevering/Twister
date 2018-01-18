@@ -67,9 +67,9 @@ require_once("functions.php");
 					}
 				$speler = array($i => $kleuren);
 			}
-			print("post");
-			print_r($_POST);
+			print("Speler");
 			print_r($speler);
+			print("<br>kleuren");
 			print_r($kleuren);
 			print("kaas");
 			
