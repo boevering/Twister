@@ -4,11 +4,8 @@
 		<title>TWISTER</title>
 	</head>
 	<body>
-
 		<?php
-		print('this is the game bitch')
+		print('this is the game bitch');
 		?>
-
-
 	</body>
 </html>
