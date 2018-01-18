@@ -19,7 +19,7 @@
 			for($i=1; $i <= $amountplayers; $i++){
 				print("<h1>Speler: ".$i."</h1>");
 				for($o=1; $o <= $amountcolors; $o++){
-					print('Kleur '.$o.': <input type="text" name="player'.$i.'color'.$o.'"><br>');
+					print('Kleur '.$o.': <input type="color" name="player'.$i.'color'.$o.'"><br>');
 				}
 				print("<br>");
 			}
