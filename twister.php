@@ -5,8 +5,8 @@
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
-			Aantal Spelers? <input type="number" max="10" name="AmountPlayers" value=<?php $_POST["AmountPlayers"]?>> <br>
-			Aantal Kleuren per speler? <input type="number" max="10" name="AmountColors" value=<?php $_POST["AmountColors"]?>> <br>
+			Aantal Spelers? <input type="number" max="10" name="AmountPlayers" value=<?php print($_POST["AmountPlayers"]);?>> <br>
+			Aantal Kleuren per speler? <input type="number" max="10" name="AmountColors" value=<?php print($_POST["AmountColors"]);?>> <br>
 			<input type="submit" value="Doorgaan"><input type="reset" value="Reset">
 		</form>
 		<?php
