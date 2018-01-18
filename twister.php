@@ -19,11 +19,13 @@ require_once("functions.php");
 		</form>
 		<?php
 		if(isset($_POST["AmountPlayers"], $_POST["AmountColors"])){
+			# $p is for the colornaming, this value is used in the query to sort out the color per player
+			$p = 1;
 			# check if post values are set, if not, don't display, if is set, show this.
 			$amountplayers = $_POST["AmountPlayers"];
 			$amountcolors = $_POST["AmountColors"];
 			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
-			print('<form action="game.php" method="POST">');
+			print('<form action="#" method="POST">');
 			for($i=1; $i <= $amountplayers; $i++){
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
@@ -34,22 +36,40 @@ require_once("functions.php");
 				}
 				print("</select><br>");
 				for($o=1; $o <= $amountcolors; $o++){
-					print('Kleur '.$o.': <input type="color" name="player'.$i.'color'.$o.'"><br>');
+					print('Kleur '.$o.': <input type="color" name="color'.$p.'"><br>');
+					$p++
 				}
 				print("<br>");
 			}
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
-			print('<input type="hidden" name="amountplayers" value='.$amountplayers.'>');
-			print('<input type="hidden" name="amountcolors" value='.$amountcolors.'>');
 			print('</form>');
 			#doorsturen array(playerid => array(userid, kleur1, kleur2, kleur3))
+		}
 			
-			
+		if(isset($_POST["userid1"])){
 			#opvragen laatste gameID
 			$MaxGameID = "SELECT `gameid` FROM `game` ORDER BY `gameid` DESC LIMIT 1;";
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
-			$row = mysqli_fetch_array($dbGM);
 			echo $row['gameid'];
+			$row = mysqli_fetch_array($dbGM);
+			$NewGameID = row['gameid']+1;
+			
+			$x = 1;
+			$speler = array();
+			for($i=1; $i <= $amountplayers; $i++){
+					for($z=$x; $z < $amountcolors * $i; $z++){
+							$kleuren[] =>$_POST["color".$z];
+					}
+				$speler[$i] => $kleuren;
+			}
+			print_r($speler);
+			
+			
+			for($i=1; $i <= $amountplayers; $i++){
+				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
+				$InsertGame = "INSERT INTO `game` (`gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$_POST["userid".$i]."', 'zwart,geel,blauw', '', '');";
+			}
+				
 		}
 		#DBtest($dbtwister);
 		?>
