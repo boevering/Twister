@@ -12,7 +12,7 @@ require_once("functions.php");
 	<body>
 		<?php
 		$gameid = $_GET["gameid"];
-		
+		#SELECT `playerid` FROM `game` WHERE `gameid` = "26d1cab1aa1e48489b971d4b558f3fe3ecd363eb" ORDER BY `playerid` DESC LIMIT 1';
 		
 			$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.' AND `playerid` ='.$i.'";';
 			$db = mysqli_query($dbtwister, $queryusers);
