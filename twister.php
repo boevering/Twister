@@ -69,6 +69,7 @@ require_once("functions.php");
 			}			
 			
 			for($i=1; $i <= $amountplayers; $i++){
+				unset($kleur);
 				foreach($speler[$i] as $color){
 					$kleur .= ",".$color;
 				}
