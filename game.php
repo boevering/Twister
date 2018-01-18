@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<?php
-		print('this is the game bitch');
+		print($_POST);
 		?>
 	</body>
 </html>
