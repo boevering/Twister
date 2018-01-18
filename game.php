@@ -17,6 +17,7 @@ require_once("functions.php");
 		
 		
 		print(ColorPlayer($test, 1));
+		print($test);
 	
 			
 			
