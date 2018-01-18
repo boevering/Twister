@@ -56,7 +56,7 @@ require_once("functions.php");
 			$dbGM = mysqli_query($dbtwister, $MaxGameID);
 			$row = mysqli_fetch_array($dbGM);
 			$hashing = $_POST."". date("Y-m-d H:i:s")."". rand(0, 9999);
-			$NewGameID = hash('CRYPT_SHA256', $hashing);
+			$NewGameID = hash('ripemd160', $hashing);
 			
 			print($NewGameID);
 
