@@ -35,7 +35,7 @@ require_once("functions.php");
 				}
 				print("</select><br>");
 				for($o=1; $o <= $amountcolors; $o++){
-					print('Kleur '.$o.': <input type="color" name="color'.$p.'"><br>');
+					print('Kleur '.$o.': <input type="color" value="'.print($_POST["color'.$p."]).'" name="color'.$p.'"><br>');
 					$p++;
 				}
 				print("<br>");
