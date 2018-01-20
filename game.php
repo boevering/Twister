@@ -41,7 +41,7 @@ $sessiecounter = 0;
 		#extract colors from $_session if $_session works...
 		foreach($_SESSION as $player => $colors){
 				${'color'.$player} = $colors;
-				print_r(${'color'.$player});
+				print_r($color1);
 				print('klaas');
 				unset($color0);
 			}
