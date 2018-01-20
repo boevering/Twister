@@ -5,8 +5,7 @@ require_once("Connections/twister.php");
 require_once("functions.php");
 
 session_start();
-$_SESSION[0] = 0;
-print($_SESSION);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +16,7 @@ print($_SESSION);
 	</head>
 	<body>
 		<?php
-		if($_SESSION[0] == 0){
+		if(isset($_SESSION)){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
