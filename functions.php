@@ -32,7 +32,7 @@ function ColorPlayer($colors, $player){
 
 function limb(){
 	$limb = array('left leg', 'right leg', 'left arm', 'right arm');
-	return array_rand($limb, 1);
+	return $limb[array_rand($limb, 1)];
 }
 
 ?>
