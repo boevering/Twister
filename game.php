@@ -15,6 +15,7 @@ require_once("functions.php");
 		<?php
 		print($_POST[1]);
 		print('kaas');
+		
 		if((isset($_POST))==1){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
