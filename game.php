@@ -35,7 +35,7 @@ $_SESSION[0] = 0;
 			}
 			$_SESSION[0] = 1;
 		}
-		#extract colors from $_POST if $_POST works...
+		#extract colors from $_session if $_session works...
 		foreach($_SESSION as $player => $colors){
 				${'color'.$player} = $colors;
 				print_r(${'color'.$player});
@@ -50,6 +50,7 @@ $_SESSION[0] = 0;
 			${'color' . $i} = $x[0];
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
 			$_SESSION[$i] = ${'color'.$i};
+			print('session<br>');
 			print_r($_SESSION);
 			
 		}
