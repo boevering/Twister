@@ -8,6 +8,11 @@ require_once("functions.php");
 <html>
 	<head>
 		<title>Twister</title>
+		
+		<style>
+			div {background-color: powderblue;}
+
+		</style>
 	</head>
 	<body>
 		<?php
