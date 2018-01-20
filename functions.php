@@ -20,7 +20,7 @@ function InsertGame() {
 	
 }
 
-function ColorPlayer($colors, $player){
+function ColorPlayer($colors){
 	$colors_array = (explode(",", $colors));
 	array_pop($colors_array);
 	

@@ -31,7 +31,7 @@ $sessiecounter = 0;
 
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 
-						$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
+						$colors_player[$i] = array(ColorPlayer($d["colors"]));
 				}
 			}
 			$sessiecounter++;
