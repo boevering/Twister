@@ -33,7 +33,7 @@ require_once("functions.php");
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})];
 		}
 		print_r($color1);
-		print('kleur speler 1: '. $colorplayer1);
+		print('<br>kleur speler 1: '. $colorplayer1);
 		
 		
 	
