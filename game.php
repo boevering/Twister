@@ -39,6 +39,7 @@ $_SESSION[0] = 0;
 		foreach($_SESSION as $player => $colors){
 				${'color'.$player} = $colors;
 				print_r(${'color'.$player});
+				print('klaas');
 				unset($color0);
 			}
 		
