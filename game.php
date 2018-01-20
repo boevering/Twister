@@ -31,7 +31,7 @@ require_once("functions.php");
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
 		}
-		print_r($color1);
+		print_r($color2);
 		
 	
 			
