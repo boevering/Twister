@@ -63,7 +63,7 @@ $sessiecounter = 0;
 		for($i=1; $i <= $playersmax; $i++){
 			print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
 		}
-		print(limn());
+		print(limb());
 	
 			
 			
