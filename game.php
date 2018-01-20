@@ -42,7 +42,7 @@ $_SESSION[0] = 0;
 				print('klaas');
 				unset($color0);
 			}
-		
+		print_r($color1);
 		
 		#extract colors from database array and put them in a color{#player} array and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
