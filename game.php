@@ -33,6 +33,7 @@ $_SESSION[0] = 0;
 						$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
 				}
 			}
+			print('I asked the database<br>');
 			$_SESSION[0] = 1;
 		}
 		#extract colors from $_session if $_session works...
