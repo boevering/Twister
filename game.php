@@ -35,6 +35,7 @@ require_once("functions.php");
 			}
 		
 		}
+		#extract colors from $_POST if $_POST works...
 		if(isset($_POST)){
 			foreach($_POST as $player => $colors){
 				${'color'.$player} = $colors;
@@ -53,7 +54,7 @@ require_once("functions.php");
 
 			
 			
-			
+		#Print html to show the colors	
 		for($i=1; $i <= $playersmax; $i++){
 			print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
 		}
