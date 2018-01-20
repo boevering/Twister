@@ -20,7 +20,14 @@ function InsertGame() {
 	
 }
 
+function ColorPlayer($colors, $player){
+	$colors_array = (explode(",", $colors));
+	array_pop($colors_array);
+	
+	return($colors_array);
 
+	
+}
 
 #ledemaat kiezen
 function limb(){
