@@ -9,10 +9,7 @@ require_once("functions.php");
 	<head>
 		<title>Twister</title>
 		
-		<style>
-			div {background-color: powderblue;}
 
-		</style>
 	</head>
 	<body>
 		<?php
@@ -40,7 +37,7 @@ require_once("functions.php");
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})];
 		}
 		
-		print('<div background-color: "'.$colorplayer1.'">Hallo</div>')
+		print('<div style ="color:"'.$colorplayer1.';">Hallo</div>')
 		
 		
 		
