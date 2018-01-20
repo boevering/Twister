@@ -13,20 +13,29 @@ require_once("functions.php");
 	</head>
 	<body>
 		<?php
-		$gameid = $_GET["gameid"];
-		$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
-		$dbplayers = mysqli_query($dbtwister, $queryplayers);
-		$players = mysqli_fetch_array($dbplayers);
-		$playersmax = $players["playerid"];
+		if(!(isset($_POST[]))){
+			$gameid = $_GET["gameid"];
+			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
+			$dbplayers = mysqli_query($dbtwister, $queryplayers);
+			$players = mysqli_fetch_array($dbplayers);
+			$playersmax = $players["playerid"];
+
+			#get colors from database for each player
+			for($i=1; $i <= $playersmax; $i++){
+				$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'" AND `playerid` ="'.$i.'";';
+				$dbusers = mysqli_query($dbtwister, $queryusers);
+
+				while ( $d=mysqli_fetch_assoc($dbusers)) {
+
+						$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
+				}
+			}
 		
-		#get colors from database for each player
-		for($i=1; $i <= $playersmax; $i++){
-			$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'" AND `playerid` ="'.$i.'";';
-			$dbusers = mysqli_query($dbtwister, $queryusers);
-
-			while ( $d=mysqli_fetch_assoc($dbusers)) {
-
-					$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
+		}
+		if(isset($_POST)){
+			foreach($_POST as $player => $colors){
+				${'color'.$player} = $colors;
+				print_r(${'color'.$player});
 			}
 		}
 		
@@ -34,9 +43,14 @@ require_once("functions.php");
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
-			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})];
+			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
+			$_POST[$i] = ${'color'.$i};
+			
 		}
-		
+
+			
+			
+			
 		for($i=1; $i <= $playersmax; $i++){
 			print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
 		}
