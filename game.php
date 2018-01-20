@@ -13,7 +13,7 @@ require_once("functions.php");
 	</head>
 	<body>
 		<?php
-		print_r($_POST[1]);
+		print($_POST[1]);
 		print('kaas');
 		if(!(isset($_POST))){
 			$gameid = $_GET["gameid"];
