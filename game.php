@@ -3,6 +3,9 @@
 require_once("Connections/twister.php");
 # Lets use a seperate file for functions
 require_once("functions.php");
+
+session_start();
+$_SESSION[0] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +16,7 @@ require_once("functions.php");
 	</head>
 	<body>
 		<?php
-		#if((isset($_POST))==1){
+		if($_SESSION[0] == 0){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
@@ -30,22 +33,22 @@ require_once("functions.php");
 						$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
 				}
 			}
-		
-		#}
+			$_SESSION[0] = 1;
+		}
 		#extract colors from $_POST if $_POST works...
-/*		if(isset($_POST)){
-			foreach($_POST as $player => $colors){
+		foreach($_SESSION as $player => $colors){
 				${'color'.$player} = $colors;
 				print_r(${'color'.$player});
+				unset($color0);
 			}
-		}
-*/		
+		
+		
 		#extract colors from database array and put them in a color{#player} array and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
-			$_POST[$i] = ${'color'.$i};
+			$_SESSION[$i] = ${'color'.$i};
 			
 		}
 
