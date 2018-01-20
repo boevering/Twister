@@ -27,7 +27,11 @@ require_once("functions.php");
 					$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
 			}
 		}
-		print_r($colors_player[1]);
+		for($i=1; $i <= $playersmax; $i++){
+			$x = $colors_player[$i];
+			${'color' . $i} = $x[0];
+		}
+		print_r($color1);
 		
 	
 			
