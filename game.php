@@ -27,7 +27,7 @@ require_once("functions.php");
 					$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
 			}
 		}
-		print_r($colors_player);
+		print_r($colors_player[1]);
 		
 	
 			
