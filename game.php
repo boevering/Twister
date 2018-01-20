@@ -17,7 +17,7 @@ require_once("functions.php");
 		$players = mysqli_fetch_array($dbplayers);
 		$playersmax = $players["playerid"];
 		
-		
+		#get colors from database for each player
 		for($i=1; $i <= $playersmax; $i++){
 			$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'" AND `playerid` ="'.$i.'";';
 			$dbusers = mysqli_query($dbtwister, $queryusers);
@@ -27,13 +27,16 @@ require_once("functions.php");
 					$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
 			}
 		}
+		
+		#extract colors from database array and put them in a color{#player} array and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})];
 		}
-		print_r($color1);
-		print('<br>kleur speler 1: '. $colorplayer1);
+		
+		print('<div background: '.$colorplayer1.'></div>')
+		
 		
 		
 	
