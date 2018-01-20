@@ -13,6 +13,8 @@ require_once("functions.php");
 	</head>
 	<body>
 		<?php
+		print_r($_POST);
+		print('kaas');
 		if(!(isset($_POST))){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
