@@ -5,6 +5,7 @@ require_once("Connections/twister.php");
 require_once("functions.php");
 
 session_start();
+$sessiecounter = 0;
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +34,8 @@ session_start();
 						$colors_player[$i] = array(ColorPlayer($d["colors"], 1));
 				}
 			}
-			print('I asked the database<br>');
+			$sessiecounter++;
+			print('I asked the database '.$sessiecounter.'<br>');
 			$_SESSION[0] = 1;
 		}
 		#extract colors from $_session if $_session works...
