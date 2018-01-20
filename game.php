@@ -30,8 +30,11 @@ require_once("functions.php");
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
+			${'colorplayer' . $i} = array_rand(${'color' . $i});
 		}
-		print_r($color2);
+		print_r($color1);
+		print('kleur speler 1: '. $colorplayer1);
+		
 		
 	
 			
