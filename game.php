@@ -37,9 +37,9 @@ require_once("functions.php");
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})];
 		}
 		
-		print('<div style ="background-color:'.$colorplayer1.';">Hallo</div>')
-		
-		
+		for($i=1; $i <= $playersmax; $i++){
+			print('<div style ="background-color:'.${'colorplayer'.$i}.'">'.${'player'.$i}'</div><br>');
+		}
 		
 	
 			
