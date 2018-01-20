@@ -13,7 +13,7 @@ require_once("functions.php");
 	</head>
 	<body>
 		<?php
-		if(!(isset($_POST[]))){
+		if(!(isset($_POST))){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
