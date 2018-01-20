@@ -38,7 +38,7 @@ require_once("functions.php");
 		}
 		
 		for($i=1; $i <= $playersmax; $i++){
-			print('<div style ="background-color:'.${'colorplayer'.$i}.'">'.${'player'.$i}.'</div><br>');
+			print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
 		}
 		
 	
