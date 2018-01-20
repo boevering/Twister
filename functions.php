@@ -20,19 +20,12 @@ function InsertGame() {
 	
 }
 
-#kleuren scheiden
-function ColorPlayer($colors, $player){
-	$colors_array = (explode(",", $colors));
-	array_pop($colors_array);
-	
-	return($colors_array);
 
-	
-}
 
+#ledemaat kiezen
 function limb(){
 	$limb = array('left leg', 'right leg', 'left arm', 'right arm');
-	return $limb[array_rand($limb, 1)];
+	return array_rand($limb, 1);
 }
 
 ?>
