@@ -13,10 +13,7 @@ require_once("functions.php");
 	</head>
 	<body>
 		<?php
-		print($_POST[1]);
-		print('kaas');
-		
-		if((isset($_POST))==1){
+		#if((isset($_POST))==1){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
@@ -34,15 +31,15 @@ require_once("functions.php");
 				}
 			}
 		
-		}
+		#}
 		#extract colors from $_POST if $_POST works...
-		if(isset($_POST)){
+/*		if(isset($_POST)){
 			foreach($_POST as $player => $colors){
 				${'color'.$player} = $colors;
 				print_r(${'color'.$player});
 			}
 		}
-		
+*/		
 		#extract colors from database array and put them in a color{#player} array and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
