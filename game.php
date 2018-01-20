@@ -50,6 +50,7 @@ $_SESSION[0] = 0;
 			${'color' . $i} = $x[0];
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
 			$_SESSION[$i] = ${'color'.$i};
+			print_r($_SESSION);
 			
 		}
 
