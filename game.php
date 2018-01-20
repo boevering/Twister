@@ -37,7 +37,7 @@ require_once("functions.php");
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})];
 		}
 		
-		print('<div style ="color:"'.$colorplayer1.';">Hallo</div>')
+		print('<div style ="color:'.$colorplayer1.';">Hallo</div>')
 		
 		
 		
