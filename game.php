@@ -6,7 +6,6 @@ require_once("functions.php");
 
 session_start();
 $_SESSION[0] = 0;
-print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +42,7 @@ print_r($_SESSION);
 				print('klaas');
 				unset($color0);
 			}
-		print_r($color1);
+		
 		
 		#extract colors from database array and put them in a color{#player} array and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
@@ -51,8 +50,7 @@ print_r($_SESSION);
 			${'color' . $i} = $x[0];
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
 			$_SESSION[$i] = ${'color'.$i};
-			print('session<br>');
-			print_r($_SESSION);
+
 			
 		}
 
