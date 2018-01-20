@@ -6,6 +6,7 @@ require_once("functions.php");
 
 session_start();
 $_SESSION[0] = 0;
+print($_SESSION);
 ?>
 <!DOCTYPE html>
 <html>
