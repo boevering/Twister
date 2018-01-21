@@ -28,16 +28,16 @@ $sessiecounter = 0;
 				$dbusers = mysqli_query($dbtwister, $queryusers);
 
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
-						$colors_player[$i] = array(ColorPlayer($d["colors"]));
+						$_SESSION["p".$i] = array(ColorPlayer($d["colors"]));
 				}
 			}
 			print('I looked it up in the database!<br>');
-			print_r($colors_player."<br>");
+			print_r($_SESSION."<br>");
 			# this is for later, make sure after this the session stage is set correctly
 			#$_SESSION["stage"] = "4";
 		}
 		
-		if($_SESSION["stage"] == 4){
+		if($_SESSION["stage"] == "4"){
 			print("Sesion found!<br>");
 		}
 		
