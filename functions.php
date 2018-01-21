@@ -13,11 +13,6 @@ function DBtest($dbtwister) {
 		echo "Host information: " . mysqli_get_host_info($dbtwister) . PHP_EOL;
 
 		mysqli_close($dbtwister);
-		}
-
-function InsertGame() {
-	#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
-	
 }
 
 function ColorPlayer($colors){
@@ -25,14 +20,13 @@ function ColorPlayer($colors){
 	array_pop($colors_array);
 	
 	return($colors_array);
-
-	
 }
 
-#ledemaat kiezen
 function limb(){
-	$limb = array('left leg', 'right leg', 'left arm', 'right arm');
-	return array_rand($limb, 1);
+	#ledemaat kiezen
+	#$limb = array('left leg', 'right leg', 'left arm', 'right arm');
+	#return array_rand($limb, 1);
+	return(rand(0,3));
 }
 
 ?>
