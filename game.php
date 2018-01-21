@@ -34,7 +34,7 @@ $sessiecounter = 0;
 			print('I looked it up in the database!<br>');
 
 			# this is for later, make sure after this the session stage is set correctly
-			#$_SESSION["stage"] = "5";
+			$_SESSION["stage"] = "5";
 		}
 		
 		if($_SESSION["stage"] == "4"){
