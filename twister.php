@@ -5,6 +5,7 @@ require_once("Connections/twister.php");
 require_once("functions.php");
 # Lets also start a session here so we can put the colors in there for now
 session_start();
+$_SESSION["debug"] = "1";
 ?>
 <!doctype html>
 <html>
