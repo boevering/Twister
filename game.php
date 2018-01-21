@@ -32,30 +32,33 @@ $sessiecounter = 0;
 				}
 			}
 			print('I looked it up in the database!<br>');
-			print_r($_SESSION["p1"]);
+
 			# this is for later, make sure after this the session stage is set correctly
-			#$_SESSION["stage"] = "4";
+			#$_SESSION["stage"] = "5";
 		}
 		
 		if($_SESSION["stage"] == "4"){
 			print("Sesion found!<br>");
 			print_r($_SESSION["p1"]);
+			$_SESSION["stage"] = "5";
 		}
 		
-		# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable
-		for($i=1; $i <= $playersmax; $i++){
-			$x = $colors_player[$i];
-			${'color' . $i} = $x[0];
-			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
-			$_SESSION[$i] = ${'color'.$i};
-		}
+		if($_SESSION["stage"] == "5"){
+			$playersmax = $_SESSION["amountplayers"];
+			# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable
+			for($i=1; $i <= $playersmax; $i++){
+				$x = $_SESSION["p".$i];
+				${'color' . $i} = $x[0];
+				${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
+				#$_SESSION[$i] = ${'color'.$i};
+			}
 
-		#Print html to show the colors	
-		for($i=1; $i <= $playersmax; $i++){
-			print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
+			#Print html to show the colors	
+			for($i=1; $i <= $playersmax; $i++){
+				print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
+			}
+			print(limb());
 		}
-		print(limb());
-
 		
 		
 		?>
