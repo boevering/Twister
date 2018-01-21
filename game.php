@@ -39,6 +39,7 @@ $sessiecounter = 0;
 		
 		if($_SESSION["stage"] == "4"){
 			print("Sesion found!<br>");
+			print_r($_SESSION["p1"]);
 		}
 		
 		# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable

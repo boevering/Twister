@@ -74,11 +74,14 @@ session_start();
 					$kleur .= $color.",";
 				}
 				
-				#INSERT INTO `game` (`entryid`, `gameid`, `userid`, `colors`, `begintime`, `endtime`) VALUES (NULL, '1', '1', 'zwart,geel,blauw', '', '');
 				$InsertGame = "INSERT INTO `game` (`gameid`,`playerid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$i."', '".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
 				$dbGM = mysqli_query($dbtwister, $InsertGame);
+				
+				# also put colors in session so when next button is used no database connection is needed
+				$_SESSION["p".$i] = array(ColorPlayer($kleur));
 			}
 			
+			$_SESSION["stage"] = "4";
 			echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
 		}
 		mysqli_close($dbtwister);

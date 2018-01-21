@@ -18,7 +18,6 @@ function DBtest($dbtwister) {
 function ColorPlayer($colors){
 	$colors_array = (explode(",", $colors));
 	array_pop($colors_array);
-	
 	return($colors_array);
 }
 
