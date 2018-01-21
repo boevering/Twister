@@ -32,7 +32,7 @@ $sessiecounter = 0;
 				}
 			}
 			print('I looked it up in the database!<br>');
-			print_r($_SESSION["p1"]."<br>");
+			print_r($_SESSION["p1"]);
 			# this is for later, make sure after this the session stage is set correctly
 			#$_SESSION["stage"] = "4";
 		}
