@@ -50,7 +50,7 @@ $sessiecounter = 0;
 				$x = $_SESSION["p".$i];
 				${'color' . $i} = $x[0];
 				${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
-				#$_SESSION[$i] = ${'color'.$i};
+				$_SESSION[$i] = ${'color'.$i};
 			}
 
 			#Print html to show the colors	
