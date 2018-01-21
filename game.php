@@ -15,7 +15,7 @@ $sessiecounter = 0;
 	</head>
 	<body>
 		<?php
-		if(isset($_SESSION["stage"])){
+		if(!isset($_SESSION["stage"])){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
