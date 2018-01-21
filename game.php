@@ -12,12 +12,10 @@ $sessiecounter = 0;
 <html>
 	<head>
 		<title>Twister</title>
-		
-
 	</head>
 	<body>
 		<?php
-		if(isset($_SESSION)){
+		if($_SESSION["stage"] != 4){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
@@ -30,21 +28,15 @@ $sessiecounter = 0;
 				$dbusers = mysqli_query($dbtwister, $queryusers);
 
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
-
 						$colors_player[$i] = array(ColorPlayer($d["colors"]));
 				}
 			}
-			$sessiecounter++;
-			print('I asked the database '.$sessiecounter.'<br>');
-			$_SESSION[0] = 1;
+			print('I looked it up in the database!<br>');
+			print_r($colors_player."<br>");
 		}
 		
-		# extract colors from $_session if $_session works...
-		foreach($_SESSION as $player => $colors){
-				${'color'.$player} = $colors;
-				print_r($color1);
-				print('klaas');
-				unset($color0);
+		if($_SESSION["stage"] == 4){
+			print("Sesion found!");
 		}
 		
 		# extract colors from database array and put them in a color{#player}  and pick random color in $colorplayer{#player} variable
