@@ -7,7 +7,7 @@ require_once("functions.php");
 session_start();
 $sessiecounter = 0;
 
-if(isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
+if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 
 ?>
 <!DOCTYPE html>
