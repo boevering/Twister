@@ -59,8 +59,6 @@ $sessiecounter = 0;
 		if($_SESSION["stage"] == "5"){
 			$playersmax = $_SESSION["amountplayers"];
 			
-			print($playersmax);
-			
 			# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable
 			for($i=1; $i <= $playersmax; $i++){
 				$x = $_SESSION["p".$i];
