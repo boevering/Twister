@@ -15,7 +15,7 @@ $sessiecounter = 0;
 	</head>
 	<body>
 		<?php
-		if($_SESSION["stage"] != 4){
+		if($_SESSION["stage"] != "4"){
 			$gameid = $_GET["gameid"];
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
@@ -33,13 +33,14 @@ $sessiecounter = 0;
 			}
 			print('I looked it up in the database!<br>');
 			print_r($colors_player."<br>");
+			$_SESSION["stage"] = "4";
 		}
 		
 		if($_SESSION["stage"] == 4){
 			print("Sesion found!");
 		}
 		
-		# extract colors from database array and put them in a color{#player}  and pick random color in $colorplayer{#player} variable
+		# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
