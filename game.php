@@ -24,7 +24,7 @@ $sessiecounter = 0;
 			$players = mysqli_fetch_array($dbplayers);
 			$playersmax = $players["playerid"];
 
-			#get colors from database for each player
+			# get colors from database for each player
 			for($i=1; $i <= $playersmax; $i++){
 				$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'" AND `playerid` ="'.$i.'";';
 				$dbusers = mysqli_query($dbtwister, $queryusers);
@@ -38,36 +38,31 @@ $sessiecounter = 0;
 			print('I asked the database '.$sessiecounter.'<br>');
 			$_SESSION[0] = 1;
 		}
-		#extract colors from $_session if $_session works...
+		
+		# extract colors from $_session if $_session works...
 		foreach($_SESSION as $player => $colors){
 				${'color'.$player} = $colors;
 				print_r($color1);
 				print('klaas');
 				unset($color0);
-			}
+		}
 		
-		
-		#extract colors from database array and put them in a color{#player} array and pick random color in $colorplayer{#player} variable
+		# extract colors from database array and put them in a color{#player}  and pick random color in $colorplayer{#player} variable
 		for($i=1; $i <= $playersmax; $i++){
 			$x = $colors_player[$i];
 			${'color' . $i} = $x[0];
 			${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
 			$_SESSION[$i] = ${'color'.$i};
-
-			
 		}
 
-			
-			
 		#Print html to show the colors	
 		for($i=1; $i <= $playersmax; $i++){
 			print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
 		}
 		print(limb());
-	
-			
-			
 
+		
+		
 		?>
 	</body>
 </html>

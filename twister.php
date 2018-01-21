@@ -3,6 +3,8 @@
 require_once("Connections/twister.php");
 # Lets use a seperate file for functions
 require_once("functions.php");
+# Lets also start a session here so we can put the colors in there for now
+session_start();
 ?>
 <!doctype html>
 <html>
@@ -20,11 +22,15 @@ require_once("functions.php");
 		if(isset($_POST["AmountPlayers"], $_POST["AmountColors"])){
 			# $p is for the colornaming, this value is used in the query to sort out the color per player
 			$p = 1;
+			
 			# check if post values are set, if not, don't display, if is set, show this.
-			$amountplayers = $_POST["AmountPlayers"];
-			$amountcolors = $_POST["AmountColors"];
+			$_SESSION["amountplayers"] = $_POST["AmountPlayers"];
+			$_SESSION["amountcolors"] = $_POST["AmountColors"];
+			$amountplayers = $_SESSION["amountplayers"];
+			$amountcolors = $_SESSION["amountcolors"];
+			
 			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
-			print('<form action="#" method="POST">');
+			print('<form action="twister.php" method="POST">');
 			for($i=1; $i <= $amountplayers; $i++){
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
@@ -44,12 +50,12 @@ require_once("functions.php");
 			print('<input type="hidden" name="AmountColors" value="'.$amountcolors.'">');
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('</form>');
-			#doorsturen array(playerid => array(userid, kleur1, kleur2, kleur3))
 		}
 			
 		if(isset($_POST["userid1"])){
-			$amountplayers = $_POST["AmountPlayers"];
-			$amountcolors = $_POST["AmountColors"];
+			$amountplayers = $_SESSION["amountplayers"];
+			$amountcolors = $_SESSION["amountcolors"];
+			
 			$hashing = $_POST."". date("Y-m-d H:i:s")."". rand(0, 9999);
 			$NewGameID = hash('ripemd160', $hashing);
 			
@@ -72,11 +78,11 @@ require_once("functions.php");
 				$InsertGame = "INSERT INTO `game` (`gameid`,`playerid`, `userid`, `colors`, `begintime`, `endtime`) VALUES ('".$NewGameID."', '".$i."', '".$_POST["userid".$i]."', '".$kleur."', '".date("Y-m-d H:i:s")."', '');";
 				$dbGM = mysqli_query($dbtwister, $InsertGame);
 			}
+			
 			echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
 		}
+		mysqli_close($dbtwister);
 		#DBtest($dbtwister);
 		?>
-		
-
 	</body>
 </html>

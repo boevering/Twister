@@ -23,9 +23,11 @@ function ColorPlayer($colors){
 }
 
 function limb(){
-	#ledemaat kiezen
-	#$limb = array('left leg', 'right leg', 'left arm', 'right arm');
-	#return array_rand($limb, 1);
+	# Give back a number for the limb,
+	# 0 = left hand
+	# 1 = right hand
+	# 2 = left foot
+	# 3 = right foot
 	return(rand(0,3));
 }
 
