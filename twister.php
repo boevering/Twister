@@ -44,11 +44,11 @@ $_SESSION["debug"] = "0";
 				print("</select>");
 				print(" ");
 				print('<input type="button" value="Toevoegen" onclick="display()">');
-				print('Voornaam: <input type="text" name="firstname" style="display:none">');
-				print('Tussenvoegsel: <input type="text" name="prefix" style="display:none">');
-				print('Achternaam: <input type="text" name="lastname" style="display:none">');
+				print('<input type="text" placeholder="Voornaam" name="firstname" style="display:none">');
+				print('<input type="text" placeholder="Tussenvoegsel" name="prefix" style="display:none">');
+				print('<input type="text" placeholder="Achternaam" name="lastname" style="display:none">');
 				
-				
+				print("<br>");
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
 					$p++;
