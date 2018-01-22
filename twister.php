@@ -24,10 +24,7 @@ $_SESSION["debug"] = "0";
 		<?php
 		if(isset($_POST["insert"])){
 			$InsertPlayer = "INSERT INTO `users`(`firstname`, `prefix`, `lastname`) VALUES ('".test_input($_POST["firstname"])."','".test_input($_POST["prefix"])."','".test_input($_POST["lastname"])."';";
-			$dbGM = mysqli_query($dbtwister, $InsertGame);
-			
-			print_r($_POST);
-			print("<br>Kaas");
+			$dbGM = mysqli_query($dbtwister, $InsertPlayer);
 			
 			$_POST["AmountPlayers"] = $_SESSION["amountplayers"];
 			$_POST["AmountColors"] = $_SESSION["amountcolors"];
