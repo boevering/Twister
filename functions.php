@@ -28,9 +28,23 @@ function limb($playersmax){
 	# 2 = left foot
 	# 3 = right foot
 	
+	# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable
+	for($i=1; $i <= $playersmax; $i++){
+		$x = $_SESSION["p".$i];
+		${'color' . $i} = $x[0];
+		${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
+
+		if($_SESSION["debug"] == "1"){
+			print_r($x);
+			print("<br>");
+			print_r(${'colorplayer' . $i});
+		}
+				
+	}
+	
 	#Print html to show the colors	
 	for($i=1; $i <= $playersmax; $i++){
-		print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
+		print('<div style ="background-color:'.${'colorplayer'.$i}.'">Player: '.$i.'</div>');
 		print(rand(0,3)."<br>");
 	}
 	

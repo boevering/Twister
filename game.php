@@ -60,20 +60,6 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		
 		if($_SESSION["stage"] == "5"){
 			$playersmax = $_SESSION["amountplayers"];
-			
-			# extract colors from database array and put them in a color{#player} and pick random color in $colorplayer{#player} variable
-			for($i=1; $i <= $playersmax; $i++){
-				$x = $_SESSION["p".$i];
-				${'color' . $i} = $x[0];
-				${'colorplayer' . $i} = ${'color' . $i}[array_rand(${'color' . $i})]; 
-
-				if($_SESSION["debug"] == "1"){
-					print_r($x);
-					print("<br>");
-					print_r(${'colorplayer' . $i});
-				}
-				
-			}
 			print(limb($playersmax));
 		}
 		
