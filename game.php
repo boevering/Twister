@@ -19,10 +19,10 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		<?php
 		if(!isset($_SESSION["stage"])){
 			# get the GameID from the URL.
-			$gameid = $_GET["gameid"];
+			$_SESSION["gameID"] = $_GET["gameid"];
 			
 			# let's see how many players there are in this game
-			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
+			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$_SESSION["gameID"].'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);
 			$players = mysqli_fetch_array($dbplayers);
 			
@@ -32,7 +32,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 
 			# get colors from database for each player
 			for($i=1; $i <= $playersmax; $i++){
-				$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$gameid.'" AND `playerid` ="'.$i.'";';
+				$queryusers = 'SELECT * FROM `game` WHERE `gameid` = "'.$_SESSION["gameID"].'" AND `playerid` ="'.$i.'";';
 				$dbusers = mysqli_query($dbtwister, $queryusers);
 
 				#put the colors in a session so we can re-use the numbers without a database
@@ -60,7 +60,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		
 		if($_SESSION["stage"] == "5"){
 			$playersmax = $_SESSION["amountplayers"];
-			print(refreshTime($gameid));
+			print(refreshTime($_SESSION["gameID"]));
 			print(limb($playersmax));
 		}
 		?>
