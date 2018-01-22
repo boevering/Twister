@@ -21,6 +21,8 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 			# get the GameID from the URL.
 			$gameid = $_GET["gameid"];
 			
+			refreshTime($gameid);
+			
 			# let's see how many players there are in this game
 			$queryplayers = 'SELECT `playerid` FROM `game` WHERE `gameid` = "'.$gameid.'" ORDER BY `playerid` DESC LIMIT 1';
 			$dbplayers = mysqli_query($dbtwister, $queryplayers);

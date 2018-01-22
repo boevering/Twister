@@ -22,6 +22,18 @@ function test_input($data) {
   return $data;
 }
 
+function refreshTime($gameid){
+	print('form action="game.php?gameid='.$gameid.'" method="POST"');
+	print('<select name="refeshtimer" required>');
+	print('<option value"15">20 sec.</option>');
+	print('<option value"20">25 sec.</option>');
+	print('<option selected value"25">30 sec.</option>');
+	print('<option value"30">35 sec.</option>');
+	print('<option value"35">40 sec.</option>');
+	print("</select>");
+	print('<meta http-equiv="refresh" content="'.$_POST["refeshtimer"].'">');
+}
+
 function ColorPlayer($colors){
 	$colors_array = (explode(",", $colors));
 	array_pop($colors_array);
