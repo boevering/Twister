@@ -70,7 +70,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		?>
 		<script type="text/javascript">
 
-			COUNTER_START = "30"
+			COUNTER_START = <?php $_POST["refeshtimer"]; ?>
 
 			function tick () {
 				if (document.getElementById ('counter').firstChild.data > 0) {
