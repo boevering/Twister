@@ -38,15 +38,14 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				#put the colors in a session so we can re-use the numbers without a database
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 						$_SESSION["p".$i] = array(ColorPlayer($d["colors"]));
+						$_SESSION["player".$i] = $d["userid"];
 				}
 				
-				$queryplayerid = 'SELECT `userid` FROM `game` WHERE `gameid` = "'.$gameID.'" and `playerid` = "'.$i.'";';
+				/*$queryplayerid = 'SELECT `userid` FROM `game` WHERE `gameid` = "'.$gameID.'" and `playerid` = "'.$i.'";';
 				$dbusers = mysqli_query($dbtwister, $queryplayerid);
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 						$_SESSION["player".$i] = $d;
-						print_r($_SESSION["player2"]);
-						print('kaas');
-				}
+				}*/
 			
 			}
 			if($_SESSION["debug"] == "1"){
