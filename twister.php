@@ -53,7 +53,11 @@ $_SESSION["debug"] = "0";
 				  <!-- Modal content -->
 				  <div class="modal-content">
 					<span class="close">&times;</span>
-					<p>Some text in the Modal..</p>
+					<p><form action="twister.php" method="post">
+					  <input type="text" name="firstname" placeholder="Voornaam"><br>
+					  <input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
+					  <input type="text" name="lastname" placeholder="Achternaam"><br>
+					  </form></p>
 				  </div>
 
 				</div><br>
