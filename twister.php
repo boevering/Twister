@@ -13,8 +13,9 @@ $_SESSION["debug"] = "0";
 		<meta charset="utf-8">
 		<title>Twister</title>
 		<script type="text/javascript">
-		function display() {
-				document.getElementById('add').style.display = 'block';
+			function display() {
+					document.getElementById('add').style.display = 'block';
+			}
 		</script>
 	</head>
 	<body>
