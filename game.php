@@ -67,7 +67,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 			}
 			$playersmax = $_SESSION["amountplayers"];
 			
-			print(refreshTime($_GET["gameid"], $_POST['refreshtimer']));
+			print(refreshTime($_GET["gameid"], $_SESSION['refreshtimer']));
 			print(limb($playersmax));
 			
 			print('<meta http-equiv="refresh" content="'.$_SESSION["refreshTimer"].'">');
