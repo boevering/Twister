@@ -25,11 +25,11 @@ function test_input($data) {
 function refreshTime($gameid){
 	print('<form action="game.php?gameid='.$gameid.'" method="POST">');
 	print('<select onchange="this.form.submit()" name="refeshtimer" required>');
-	print('<option value="15">20 sec.</option>');
-	print('<option value="20">25 sec.</option>');
-	print('<option selected value="25">30 sec.</option>');
-	print('<option value="30">35 sec.</option>');
-	print('<option value="35">40 sec.</option>');
+	print('<option value="15">15 sec.</option>');
+	print('<option value="20">20 sec.</option>');
+	print('<option selected value="25">25 sec.</option>');
+	print('<option value="30">30 sec.</option>');
+	print('<option value="35">35 sec.</option>');
 	print("</select>");
 	print("</form>");
 }
