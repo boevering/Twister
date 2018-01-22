@@ -23,8 +23,8 @@ function test_input($data) {
 }
 
 function refreshTime($gameid, $chosen){
-	print('klaas '. $chosen.'<br>'.\n);
-	print('<form action="game.php?gameid='.$gameid.'" method="POST">'.\n);
+	print('klaas '. $chosen.'<br>';
+	print('<form action="game.php?gameid='.$gameid.'" method="POST">');
 	/*print('<select onchange="this.form.submit()" name="refeshtimer" required>');
 	print('<option value="15">15 sec.</option>');
 	print('<option value="20">20 sec.</option>');
@@ -35,13 +35,13 @@ function refreshTime($gameid, $chosen){
 	
 	for($i = 5; $i <= 35; $i = $i + 5){
 		if($i == $chosen){
-			print('<option selected value="'.$i.'">'.$i.' sec.</option>'.\n);
+			print('<option selected value="'.$i.'">'.$i.' sec.</option>');
 		}
 		else{
-			print('<option value="'.$i.'">'.$i.' sec.</option>'.\n);
+			print('<option value="'.$i.'">'.$i.' sec.</option>');
 		}
 	}
-	print("</select>".\n);
+	print("</select>");
 	print("</form>");
 }
 
