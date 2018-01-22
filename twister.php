@@ -46,11 +46,18 @@ $_SESSION["debug"] = "0";
 				print("</select>");
 				?>
 				
-				<input type="button" value="Toevoegen" onclick="display()"><br>
-				<div id="add" style="display:none"><form action="twister.php" method="POST">
-				<input type="text" placeholder="Voornaam" name="firstname">
-				<input type="text" placeholder="Tussenvoegsel" name="prefix">
-				<input type="text" placeholder="Achternaam" name="lastname"></form></div>
+				<!-- Trigger/Open The Modal -->
+				<button id="myBtn">Toevoegen</button><br>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content">
+					<span class="close">&times;</span>
+					<p>Some text in the Modal..</p>
+				  </div>
+
+				</div>
 				
 				<?php
 				for($o=1; $o <= $amountcolors; $o++){
