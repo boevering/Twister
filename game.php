@@ -74,13 +74,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				}
 				
 			}
-			
-			#Print html to show the colors	
-			for($i=1; $i <= $playersmax; $i++){
-				print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
-			}
-			
-			print(limb());
+			print(limb($playersmax));
 		}
 		
 		

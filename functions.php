@@ -21,13 +21,19 @@ function ColorPlayer($colors){
 	return($colors_array);
 }
 
-function limb(){
+function limb($playersmax){
 	# Give back a number for the limb,
 	# 0 = left hand
 	# 1 = right hand
 	# 2 = left foot
 	# 3 = right foot
-	return(rand(0,3));
+	
+	#Print html to show the colors	
+	for($i=1; $i <= $playersmax; $i++){
+		print('<div style ="background-color:'.${'colorplayer'.$i}.'">player'.$i.'</div><br>');
+		print(rand(0,3)."<br>");
+	}
+	
 }
 
 ?>
