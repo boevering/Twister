@@ -22,14 +22,24 @@ function test_input($data) {
   return $data;
 }
 
-function refreshTime($gameid){
+function refreshTime($gameid, $chosen){
 	print('<form action="game.php?gameid='.$gameid.'" method="POST">');
-	print('<select onchange="this.form.submit()" name="refeshtimer" required>');
+	/*print('<select onchange="this.form.submit()" name="refeshtimer" required>');
 	print('<option value="15">15 sec.</option>');
 	print('<option value="20">20 sec.</option>');
 	print('<option selected value="25">25 sec.</option>');
 	print('<option value="30">30 sec.</option>');
-	print('<option value="35">35 sec.</option>');
+	print('<option value="35">35 sec.</option>'); */
+
+	
+	for($i = 5; $i <= 35; $i = $i + 50){
+		if($i == $chosen){
+			print('<option selected value="15">'.$i.' sec.</option>');
+		}
+		else{
+			print('<option value="15">'.$i.' sec.</option>');
+		}
+	}
 	print("</select>");
 	print("</form>");
 }
