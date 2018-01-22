@@ -13,11 +13,12 @@ $_SESSION["debug"] = "0";
 		<meta charset="utf-8">
 		<title>Twister</title>
 		<script type="text/javascript" src="js/functions.js"></script>
+		<link rel="stylesheet" type="text/css" href="style/modal.css">
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
-			Aantal Spelers? <input type="number" max="10" name="AmountPlayers" value=<?php print($_POST["AmountPlayers"]);?> required> <br>
-			Aantal Kleuren per speler? <input type="number" max="10" name="AmountColors" value=<?php print($_POST["AmountColors"]);?> required> <br>
+			Aantal Spelers? <input type="number" max="10" name="AmountPlayers" value=<?php print($_POST["AmountPlayers"]);?> required /> <br>
+			Aantal Kleuren per speler? <input type="number" max="10" name="AmountColors" value=<?php print($_POST["AmountColors"]);?> required /> <br>
 			<input type="submit" value="Doorgaan"><input type="reset" value="Reset">
 		</form>
 		<?php
