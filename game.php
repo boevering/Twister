@@ -72,6 +72,8 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 			
 			print('<meta http-equiv="refresh" content="'.$_SESSION["refreshTimer"].'">');
 		}
+		print('hallo wereld! <br>');
+		print($_SESSION['p1']);
 		?>
 		<script type="text/javascript">
 
@@ -100,9 +102,4 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 			}
 
 		</script>
-		<?php
-		print('hallo wereld! <br>');
-		print($_SESSION['p1']);
-		?>
-	</body>
 </html>
