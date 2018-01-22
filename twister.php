@@ -23,7 +23,7 @@ $_SESSION["debug"] = "0";
 		</form>
 		<?php
 		if(isset($_POST["insert"])){
-			$InsertPlayer = "INSERT INTO `users`(`firstname`, `prefix`, `lastname`) VALUES ('".test_input($_POST["firstname"])."','".test_input($_POST["prefix"])."','".test_input($_POST["lastname"])."';";
+			$InsertPlayer = "INSERT INTO `users`(`firstname`, `prefix`, `lastname`) VALUES ('".test_input($_POST["firstname"])."','".test_input($_POST["prefix"])."','".test_input($_POST["lastname"])."');";
 			$dbGM = mysqli_query($dbtwister, $InsertPlayer);
 			
 			print($InsertPlayer);
