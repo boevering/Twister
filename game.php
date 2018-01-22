@@ -102,7 +102,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		</script>
 		<?php
 		print('hallo wereld! <br>');
-		print($_SESSION('p1'));
+		print($_SESSION['p1']);
 		?>
 	</body>
 </html>
