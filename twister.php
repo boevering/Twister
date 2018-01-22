@@ -26,6 +26,8 @@ $_SESSION["debug"] = "0";
 			$InsertPlayer = "INSERT INTO `users`(`firstname`, `prefix`, `lastname`) VALUES ('".test_input($_POST["firstname"])."','".test_input($_POST["prefix"])."','".test_input($_POST["lastname"])."';";
 			$dbGM = mysqli_query($dbtwister, $InsertPlayer);
 			
+			print($InsertPlayer);
+			
 			$_POST["AmountPlayers"] = $_SESSION["amountplayers"];
 			$_POST["AmountColors"] = $_SESSION["amountcolors"];
 		}
