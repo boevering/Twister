@@ -56,7 +56,7 @@ $_SESSION["debug"] = "0";
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
-				print("</select>");
+				print("</select><br>");
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
 					$p++;
