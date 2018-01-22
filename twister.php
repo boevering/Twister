@@ -31,20 +31,7 @@ $_SESSION["debug"] = "0";
 			$_SESSION["amountcolors"] = $_POST["AmountColors"];
 			$amountplayers = $_SESSION["amountplayers"];
 			$amountcolors = $_SESSION["amountcolors"];
-			?>
-							<!-- Trigger/Open The Modal -->
-				<button id="myBtn">Toevoegen</button><br>
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
 
-				  <!-- Modal content -->
-				  <div class="modal-content">
-					<span class="close">&times;</span>
-					<p>Some text in the Modal..</p>
-				  </div>
-
-				</div>
-			<?php
 			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
 			print('<form action="twister.php" method="POST">');
 			for($i=1; $i <= $amountplayers; $i++){
@@ -57,6 +44,20 @@ $_SESSION["debug"] = "0";
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
 				print("</select><br>");
+							?>
+				<!-- Trigger/Open The Modal -->
+				<button type="button" id="myBtn">Toevoegen</button><br>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content">
+					<span class="close">&times;</span>
+					<p>Some text in the Modal..</p>
+				  </div>
+
+				</div>
+			<?php
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
 					$p++;
