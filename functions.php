@@ -29,13 +29,13 @@ function refreshTime($gameid, $chosen){
 
 	for($i = 5; $i <= 35; $i = $i + 5){
 		if($i == $chosen){
-			print('<option selected value="'.$i.'">'.$i.' sec.</option>');
+			print('<option selected value="'.$i.'">'.$i.' sec.</option>\n');
 		}
 		else{
-			print('<option value="'.$i.'">'.$i.' sec.</option>');
+			print('<option value="'.$i.'">'.$i.' sec.</option>\n');
 		}
 	}
-	print("</select>");
+	print("</select>\n");
 	print("</form>");
 }
 
