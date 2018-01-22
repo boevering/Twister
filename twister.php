@@ -42,7 +42,7 @@ $_SESSION["debug"] = "0";
 				$queryusers = "SELECT * FROM `users`;";
 				$db = mysqli_query($dbtwister, $queryusers);
 				print ('<select name="userid'.$i.'">');
-				print ('<option selected value="--------">-------</option>');
+				print ('<option selected>-------</option>');
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
