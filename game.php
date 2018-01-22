@@ -16,7 +16,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		<title>Twister</title>
 		<script type="text/javascript">
 
-			COUNTER_START = 30
+			COUNTER_START = <?php print($_POST["refeshtimer"]); ?>
 
 			function tick () {
 				if (document.getElementById ('counter').firstChild.data > 0) {
@@ -36,7 +36,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				var body = document.getElementsByTagName ('BODY')[0]
 				var firstChild = body.getElementsByTagName ('*')[0]
 
-				body.insertBefore (p, firstChild)
+				body.insertAfter (p, firstChild)
 				tick()
 			}
 
