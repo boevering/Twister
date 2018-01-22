@@ -41,11 +41,12 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				}
 				
 				$queryplayerid = 'SELECT `userid` FROM `game` WHERE `gameid` = "'.$gameID.'" and `playerid` = "'.$i.'";';
-				$dbusers = mysqli_query($dbtwister, $queryusers);
+				$dbusers = mysqli_query($dbtwister, $queryplayerid);
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 						$_SESSION["player".$i] = $d;
 						print($_SESSION["player1"]);
 						print('kaas');
+				}
 			
 			}
 			if($_SESSION["debug"] == "1"){
