@@ -22,6 +22,14 @@ $_SESSION["debug"] = "0";
 			<input type="submit" value="Doorgaan"><input type="reset" value="Reset">
 		</form>
 		<?php
+		if(isset($_POST["insert"])){
+			$InsertPlayer = "INSERT INTO `users`(`firstname`, `prefix`, `lastname`) VALUES ('".test_input($_POST["firstname"])."','".test_input($_POST["prefix"])."','".test_input($_POST["lastname"])."';";
+			$dbGM = mysqli_query($dbtwister, $InsertGame);
+			
+			$_POST["AmountPlayers"] = $_SESSION["amountplayers"];
+			$_POST["AmountColors"] = $_SESSION["amountcolors"];
+		}
+		
 		if(isset($_POST["AmountPlayers"], $_POST["AmountColors"])){
 			# $p is for the colornaming, this value is used in the query to sort out the color per player
 			$p = 1;
@@ -58,6 +66,7 @@ $_SESSION["debug"] = "0";
 					  <input type="text" name="firstname" placeholder="Voornaam" required><br>
 					  <input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
 					  <input type="text" name="lastname" placeholder="Achternaam" required><br><br>
+					  <input type="hidden" name="insert">
 					  <input type="reset" value="Reset"><input type="submit" value="Toevoegen">
 					  </form></p>
 				  </div>

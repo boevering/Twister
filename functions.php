@@ -15,6 +15,13 @@ function DBtest($dbtwister) {
 		mysqli_close($dbtwister);
 }
 
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 function ColorPlayer($colors){
 	$colors_array = (explode(",", $colors));
 	array_pop($colors_array);
