@@ -44,7 +44,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				$dbusers = mysqli_query($dbtwister, $queryplayerid);
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 						$_SESSION["player".$i] = $d;
-						print($_SESSION["player1"]);
+						print_r($_SESSION["player1"]);
 						print('kaas');
 				}
 			
