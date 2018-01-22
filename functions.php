@@ -41,9 +41,8 @@ function limb($playersmax){
 		}
 				
 	}
-	$randomnummer = rand(0,3)
-	
-	
+	$randomnummer = rand(0,3);
+		
 	#Print html to show the colors	
 	for($i=1; $i <= $playersmax; $i++){
 		print('<div style ="height: 150px; width: 110px; background-color:'.${'colorplayer'.$i}.';">Player: '.$i.'<br><img src="img/'.$randomnummer.'.png" /></div>');
