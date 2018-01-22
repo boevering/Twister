@@ -43,7 +43,7 @@ $_SESSION["debug"] = "0";
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
-				print("</select><br>");
+				print("</select>");
 							?>
 				<!-- Trigger/Open The Modal -->
 				<button type="button" id="myBtn">Toevoegen</button><br>
@@ -56,7 +56,7 @@ $_SESSION["debug"] = "0";
 					<p>Some text in the Modal..</p>
 				  </div>
 
-				</div>
+				</div><br>
 			<?php
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
