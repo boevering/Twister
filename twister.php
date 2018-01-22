@@ -12,11 +12,7 @@ $_SESSION["debug"] = "0";
 	<head>
 		<meta charset="utf-8">
 		<title>Twister</title>
-		<script type="text/javascript">
-			function display() {
-					document.getElementById('add').style.display = 'block';
-			}
-		</script>
+		<script type="text/javascript" src="js/functions.js"></script>
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
@@ -47,13 +43,15 @@ $_SESSION["debug"] = "0";
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
 				print("</select>");
-				print(" ");
-				print('<input type="button" value="Toevoegen" onclick="display()"><br>');
-				print('<div id="add" style="display:none"><input type="text" placeholder="Voornaam" name="firstname">');
-				print('<input type="text" placeholder="Tussenvoegsel" name="prefix">');
-				print('<input type="text" placeholder="Achternaam" name="lastname"></div>');
+				?>
 				
-				print("<br>");
+				<input type="button" value="Toevoegen" onclick="display()"><br>
+				<div id="add" style="display:none"><form action="twister.php" method="POST">
+				<input type="text" placeholder="Voornaam" name="firstname">
+				<input type="text" placeholder="Tussenvoegsel" name="prefix">
+				<input type="text" placeholder="Achternaam" name="lastname"></form></div>
+				
+				<?php
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
 					$p++;
