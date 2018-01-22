@@ -38,6 +38,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				#put the colors in a session so we can re-use the numbers without a database
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 						$_SESSION["p".$i] = array(ColorPlayer($d["colors"]));
+						print('kaas');
 				}
 			}
 			if($_SESSION["debug"] == "1"){
