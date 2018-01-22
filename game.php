@@ -39,8 +39,14 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				while ( $d=mysqli_fetch_assoc($dbusers)) {
 						$_SESSION["p".$i] = array(ColorPlayer($d["colors"]));
 				}
-				#get userid from same query
-						#SELECT `userid` FROM `game` WHERE `gameid` = "45dc8b1474145a52589a80974a4f5cb7b786867b" and `playerid` = 1
+				
+				$queryplayerid = 'SELECT `userid` FROM `game` WHERE `gameid` = "'.$gameID.'" and `playerid` = "'.$i.'";';
+				$dbusers = mysqli_query($dbtwister, $queryusers);
+				while ( $d=mysqli_fetch_assoc($dbusers)) {
+						$_SESSION["player".$i] = $d;
+						print($_SESSION["player1"]);
+						print('kaas');
+			
 			}
 			if($_SESSION["debug"] == "1"){
 				print('I looked it up in the database!<br>');
