@@ -35,10 +35,10 @@ function refreshTime($gameid, $chosen){
 	
 	for($i = 5; $i <= 35; $i = $i + 50){
 		if($i == $chosen){
-			print('<option selected value="15">'.$i.' sec.</option>');
+			print('<option selected value="'.$i.'">'.$i.' sec.</option>');
 		}
 		else{
-			print('<option value="15">'.$i.' sec.</option>');
+			print('<option value="'.$i.'">'.$i.' sec.</option>');
 		}
 	}
 	print("</select>");
