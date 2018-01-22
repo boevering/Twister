@@ -36,7 +36,7 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 				var body = document.getElementsByTagName ('BODY')[0]
 				var firstChild = body.getElementsByTagName ('*')[0]
 
-				body.insertAfter (p, firstChild)
+				body.insertBefore (p, firstChild)
 				tick()
 			}
 
