@@ -12,7 +12,10 @@ $_SESSION["debug"] = "0";
 	<head>
 		<meta charset="utf-8">
 		<title>Twister</title>
-		<script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript">
+		function display() {
+				document.getElementById('add').style.display = 'block';
+		</script>
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
@@ -44,9 +47,9 @@ $_SESSION["debug"] = "0";
 				print("</select>");
 				print(" ");
 				print('<input type="button" value="Toevoegen" onclick="display()">');
-				print('<input type="text" placeholder="Voornaam" name="firstname" style="visibility:hidden">');
-				print('<input type="text" placeholder="Tussenvoegsel" name="prefix" style="visibility:hidden">');
-				print('<input type="text" placeholder="Achternaam" name="lastname" style="visibility:hidden">');
+				print('<div id="add" style="display:none"><input type="text" placeholder="Voornaam" name="firstname">');
+				print('<input type="text" placeholder="Tussenvoegsel" name="prefix">');
+				print('<input type="text" placeholder="Achternaam" name="lastname"></div>');
 				
 				print("<br>");
 				for($o=1; $o <= $amountcolors; $o++){
