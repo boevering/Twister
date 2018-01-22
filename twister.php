@@ -44,9 +44,9 @@ $_SESSION["debug"] = "0";
 				print("</select>");
 				print(" ");
 				print('<input type="button" value="Toevoegen" onclick="display()">');
-				print('<input type="text" placeholder="Voornaam" name="firstname" style="display:none">');
-				print('<input type="text" placeholder="Tussenvoegsel" name="prefix" style="display:none">');
-				print('<input type="text" placeholder="Achternaam" name="lastname" style="display:none">');
+				print('<input type="text" placeholder="Voornaam" name="firstname" style="visibility:hidden">');
+				print('<input type="text" placeholder="Tussenvoegsel" name="prefix" style="visibility:hidden">');
+				print('<input type="text" placeholder="Achternaam" name="lastname" style="visibility:hidden">');
 				
 				print("<br>");
 				for($o=1; $o <= $amountcolors; $o++){
