@@ -42,12 +42,13 @@ $_SESSION["debug"] = "0";
 				$queryusers = "SELECT * FROM `users`;";
 				$db = mysqli_query($dbtwister, $queryusers);
 				print ('<select name="userid'.$i.'">');
+				print ('<option selected value="--------">-------</option>');
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
 				print("</select>");
 				print(" ");
-				print('<input type="button" value="Toevoegen" onclick="display()">');
+				print('<input type="button" value="Toevoegen" onclick="display()"><br>');
 				print('<div id="add" style="display:none"><input type="text" placeholder="Voornaam" name="firstname">');
 				print('<input type="text" placeholder="Tussenvoegsel" name="prefix">');
 				print('<input type="text" placeholder="Achternaam" name="lastname"></div>');
