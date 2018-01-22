@@ -54,10 +54,10 @@ $_SESSION["debug"] = "0";
 				  <div class="modal-content">
 					<span class="close">&times;</span>
 					<p><form action="twister.php" method="post">
-					  <h1>Vul de volgende velden in</h1>
+					  <h1>Vul de volgende velden in:</h1>
 					  <input type="text" name="firstname" placeholder="Voornaam" required><br>
 					  <input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
-					  <input type="text" name="lastname" placeholder="Achternaam" required><br>
+					  <input type="text" name="lastname" placeholder="Achternaam" required><br><br>
 					  <input type="reset" value="Reset"><input type="submit" value="Toevoegen">
 					  </form></p>
 				  </div>
