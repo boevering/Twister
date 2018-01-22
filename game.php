@@ -62,8 +62,6 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 			$playersmax = $_SESSION["amountplayers"];
 			print(limb($playersmax));
 		}
-		
-		
 		?>
 	</body>
 </html>
