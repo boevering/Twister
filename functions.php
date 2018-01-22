@@ -32,7 +32,6 @@ function refreshTime($gameid){
 	print('<option value="35">40 sec.</option>');
 	print("</select>");
 	print("</form>");
-	print('<meta http-equiv="refresh" content="'.$_POST["refeshtimer"].'">');
 }
 
 function ColorPlayer($colors){
