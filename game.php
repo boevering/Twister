@@ -59,9 +59,11 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		}
 		
 		if($_SESSION["stage"] == "5"){
-			$_SESSION["refreshTimer"] = $_POST["refeshtimer"];
-			
-			if(!isset($_SESSION["refreshTimer"])){$_SESSION["refreshTimer"] = "25";};
+			if(isset($_POST["refeshtimer"])){
+				$_SESSION["refreshTimer"] = $_POST["refeshtimer"];
+			} else {
+				$_SESSION["refreshTimer"] = "25";
+			}
 			$playersmax = $_SESSION["amountplayers"];
 			
 			print(refreshTime($_GET["gameid"]));
