@@ -59,18 +59,20 @@ if(!isset($_SESSION["debug"])){$_SESSION["debug"] = "0";};
 		}
 		
 		if($_SESSION["stage"] == "5"){
-			if(!isset($_POST["refeshtimer"])){$_POST["refeshtimer"] = "30";};
+			$_SESSION["refreshTimer"] = $_POST["refeshtimer"];
+			
+			if(!isset($_SESSION["refreshTimer"])){$_SESSION["refreshTimer"] = "25";};
 			$playersmax = $_SESSION["amountplayers"];
 			
 			print(refreshTime($_GET["gameid"]));
 			print(limb($playersmax));
 			
-			print('<meta http-equiv="refresh" content="'.$_POST["refeshtimer"].'">');
+			print('<meta http-equiv="refresh" content="'.$_SESSION["refreshTimer"].'">');
 		}
 		?>
 		<script type="text/javascript">
 
-			COUNTER_START = <?php echo $_POST["refeshtimer"]; ?>
+			COUNTER_START = <?php echo $_SESSION["refreshTimer"]; ?>
 
 			function tick () {
 				if (document.getElementById ('counter').firstChild.data > 0) {
