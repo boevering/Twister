@@ -12,6 +12,7 @@ $_SESSION["debug"] = "0";
 	<head>
 		<meta charset="utf-8">
 		<title>Twister</title>
+		<script type="text/javascript" src="js/functions.js"></script>
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
@@ -40,15 +41,20 @@ $_SESSION["debug"] = "0";
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
-				print("</select><br>");
+				print("</select>");
+				print(" ");
+				print('<input type="button" value="Toevoegen" onclick="display()">');
+				print('Voornaam: <input type="text" name="firstname" style="display:none">');
+				print('Tussenvoegsel: <input type="text" name="prefix" style="display:none">');
+				print('Achternaam: <input type="text" name="lastname" style="display:none">');
+				
+				
 				for($o=1; $o <= $amountcolors; $o++){
 					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
 					$p++;
 				}
 				print("<br>");
 			}
-			print('<input type="hidden" name="AmountPlayers" value="'.$amountplayers.'">');
-			print('<input type="hidden" name="AmountColors" value="'.$amountcolors.'">');
 			print('<input type="submit" value="Doorgaan"><input type="reset" value="Reset">');
 			print('</form>');
 		}
