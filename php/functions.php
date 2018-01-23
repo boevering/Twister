@@ -70,7 +70,7 @@ function limb($playersmax){
 		
 	#Print html to show the colors	
 	for($i=1; $i <= $playersmax; $i++){
-		print('<div style ="height: 250px; width: 200px; background-color:'.${'colorplayer'.$i}.';">Player: '.$i.'<br><img style="display: block; margin-left auto; margin-right: auto; height: 85%; width: 90%;" src="img/'.rand(0,3).'.png" /></div><br>');
+		print('<div style ="height: 250px; width: 200px; background-color:'.${'colorplayer'.$i}.';">Player: '.$i.'<br><img style="display: block; margin-left auto; margin-right: auto; height: 85%; width: 90%;" src="../img/'.rand(0,3).'.png" /></div><br>');
 	}
 	
 }
