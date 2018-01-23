@@ -100,4 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-.vs/*
+#Visual Studio crap
+.vs/
+.idea/
