@@ -12,8 +12,8 @@ $_SESSION["debug"] = "0";
 	<head>
 		<meta charset="utf-8">
 		<title>Twister</title>
-		<script type="text/javascript" src="js/functions.js"></script>
-		<link rel="stylesheet" type="text/css" href="style/modal.css">
+		<script type="text/javascript" src="../js/functions.js"></script>
+		<link rel="stylesheet" type="text/css" href="../style/modal.css">
 	</head>
 	<body>
 		<form action="twister.php" method="POST">
