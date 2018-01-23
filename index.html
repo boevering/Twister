@@ -7,17 +7,19 @@
     <link rel="stylesheet" type="text/css" href="style/index.css">
 </head>
 <body>
-<form action="twister.php" method="POST" id="StartTwisterForm">
-    <table>
-        <tr>
-            <td><label>Aantal Spelers?</label></td>
-            <td><input type="number" max="10" name="AmountPlayers" /></td>
-        </tr>
-        <tr>
-            <td><label>Aantal Kleuren per speler?</label></td>
-            <td><input type="submit" value="Doorgaan"><input type="reset" value="Reset"></td>
-        </tr>
-    </table>
-</form>
+    <form action="php/twister.php" method="POST" id="StartTwisterForm">
+        <table>
+            <tr>
+                <td><label>Aantal Spelers?</label></td>
+                <td><input type="number" max="10" name="AmountPlayers" /></td>
+            </tr>
+            <tr>
+                <td><label>Aantal Kleuren per speler?</label></td>
+                <td><input type="number" max="10" name="AmountColors" /></td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Doorgaan"><input type="reset" value="Reset">
+    </form>
 </body>
 </html>
