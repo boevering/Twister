@@ -41,11 +41,7 @@ function refreshTime($gameid, $chosen){
 	print("</form>");
 }
 
-function ColorPlayer($colors){
-	$colors_array = (explode(",", $colors));
-	array_pop($colors_array);
-	return($colors_array);
-}
+
 
 function limb($playersmax){
 	# Give back a number for the limb,
