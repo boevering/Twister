@@ -10,16 +10,12 @@ session_start();
 		<meta charset="utf-8">
 		<title>Twister</title>
 		<script type="text/javascript" src="../js/functions.js"></script>
+		<script type="text/javascript" src="../js/twister.js"></script>
 		<link rel="stylesheet" type="text/css" href="../style/modal.css">
 	</head>
 	<body>
-		<form action="twister.php" method="POST">
-			Aantal Spelers? <input type="number" max="10" name="AmountPlayers" value=<?php print($_POST["AmountPlayers"]);?> required /> <br>
-			Aantal Kleuren per speler? <input type="number" max="10" name="AmountColors" value=<?php print($_POST["AmountColors"]);?> required /> <br>
-			<input type="submit" value="Doorgaan"><input type="reset" value="Reset">
-		</form>
 		<?php
-		if(isset($_POST["insert"])){
+		if(isset(["insert"])){
 			$InsertPlayer = "INSERT INTO `users`(`firstname`, `prefix`, `lastname`) VALUES ('".test_input($_POST["firstname"])."','".test_input($_POST["prefix"])."','".test_input($_POST["lastname"])."');";
 			$dbGM = mysqli_query($dbtwister, $InsertPlayer);
 						
@@ -28,35 +24,38 @@ session_start();
 		}
 		
 		if(isset($_POST["AmountPlayers"], $_POST["AmountColors"])){
-			# $p is for the colornaming, this value is used in the query to sort out the color per player
-			$p = 1;
-			
+		
 			# check if post values are set, if not, don't display, if is set, show this.
 			$_SESSION["amountplayers"] = $_POST["AmountPlayers"];
 			$_SESSION["amountcolors"] = $_POST["AmountColors"];
-			$amountplayers = $_SESSION["amountplayers"];
+			$amountplayers = $_POST["AmountPlayers"];
 			$amountcolors = $_SESSION["amountcolors"];
 
-			print("<br>Aantal gekozen spelers: ". $amountplayers. "<br>");
-			print('<form action="twister.php" method="POST">');
+			readfile('../html/Setup.html');
+
+			?>
+
+			<br>Aantal gekozen spelers: <?php echo $_POST['AmountPlayers']; ?><br>
+			<form action="twister.php" method="POST">
+
+			<?php
 			for($i=1; $i <= $amountplayers; $i++){
+
 				print("<h1>Speler: ".$i."</h1>");
 				$queryusers = "SELECT * FROM `users`;";
 				$db = mysqli_query($dbtwister, $queryusers);
 				print ('<select name="userid'.$i.'" required>');
 				print ('<option selected disabled>Kies speler:</option>');
+
 				while ( $d=mysqli_fetch_assoc($db)) {
   					echo "<option value=".$d['id'].">".$d['firstname']." ".$d['prefix']." ".$d['lastname']."</option>";
 				}
 				print("</select>");
-							?>
-				<!-- Trigger/Open The Modal -->
-				<button type="button" id="myBtn">Toevoegen</button><br>
+				print('<button type="button" id="myBtn">Toevoegen</button><br>');
 
-			<?php
-				for($o=1; $o <= $amountcolors; $o++){
-					print('Kleur '.$o.': <input type="color" value="'.$_POST["color'.$p."].'" name="color'.$p.'"><br>');
-					$p++;
+
+				for(var i = 0; i < $amountcolors; i++){
+					print('Kleur '+ i + ': <input type="color" value="' + $_POST["color" + i] + '" name="color' + i + '"/> <br>');
 				}
 				print("<br>");
 			}
@@ -98,42 +97,22 @@ session_start();
 		}
 		mysqli_close($dbtwister);
 		?>
-			<div id="myModal" class="modal">
 
-				<div class="modal-content">
-					<span class="close">&times;</span>
-					<p><form action="twister.php" method="post">
-						<h1>Vul de volgende velden in:</h1>
-						<input type="text" name="firstname" placeholder="Voornaam" required><br>
-						<input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
-						<input type="text" name="lastname" placeholder="Achternaam" required><br><br>
-						<input type="hidden" name="insert">
-						<input type="reset" value="Reset"><input type="submit" value="Toevoegen">
-						</form></p>
-				</div>
+		<div id="myModal" class="modal">
 
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p><form action="twister.php" method="post">
+					<h1>Vul de volgende velden in:</h1>
+					<input type="text" name="firstname" placeholder="Voornaam" required><br>
+					<input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
+					<input type="text" name="lastname" placeholder="Achternaam" required><br><br>
+					<input type="hidden" name="insert">
+					<input type="reset" value="Reset"><input type="submit" value="Toevoegen">
+					</form></p>
 			</div>
-			<br>
-		
-		<script>
-		var modal = document.getElementById('myModal');
-		var btn = document.getElementById("myBtn");
-		var span = document.getElementsByClassName("close")[0];
 
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-		</script>
-		
+		</div>
+		<br>
 	</body>
 </html>
