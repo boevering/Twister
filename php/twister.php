@@ -1,12 +1,9 @@
 <?php 
-# Let's make sure the database is connected, use $dbtwister as database (file on server, NOT on Github!)
 require_once("../Connections/twister.php");
-# Lets use a seperate file for functions
 require_once("functions.php");
-# Lets also start a session here so we can put the colors in there for now
 session_start();
-$_SESSION["debug"] = "0";
 ?>
+
 <!doctype html>
 <html>
 	<head>
@@ -100,48 +97,37 @@ $_SESSION["debug"] = "0";
 			echo '<script type="text/javascript">location.href = "game.php?gameid='.$NewGameID.'"</script>';
 		}
 		mysqli_close($dbtwister);
-		#DBtest($dbtwister);
 		?>
-		
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
+			<div id="myModal" class="modal">
 
-				  <!-- Modal content -->
-				  <div class="modal-content">
+				<div class="modal-content">
 					<span class="close">&times;</span>
 					<p><form action="twister.php" method="post">
-					  <h1>Vul de volgende velden in:</h1>
-					  <input type="text" name="firstname" placeholder="Voornaam" required><br>
-					  <input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
-					  <input type="text" name="lastname" placeholder="Achternaam" required><br><br>
-					  <input type="hidden" name="insert">
-					  <input type="reset" value="Reset"><input type="submit" value="Toevoegen">
-					  </form></p>
-				  </div>
+						<h1>Vul de volgende velden in:</h1>
+						<input type="text" name="firstname" placeholder="Voornaam" required><br>
+						<input type="text" name="prefix" placeholder="Tussenvoegsel"><br>
+						<input type="text" name="lastname" placeholder="Achternaam" required><br><br>
+						<input type="hidden" name="insert">
+						<input type="reset" value="Reset"><input type="submit" value="Toevoegen">
+						</form></p>
+				</div>
 
-				</div><br>
+			</div>
+			<br>
 		
 		<script>
-		// Get the modal
 		var modal = document.getElementById('myModal');
-
-		// Get the button that opens the modal
 		var btn = document.getElementById("myBtn");
-
-		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 
-		// When the user clicks the button, open the modal 
 		btn.onclick = function() {
 			modal.style.display = "block";
 		}
 
-		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
 			modal.style.display = "none";
 		}
 
-		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal) {
 				modal.style.display = "none";

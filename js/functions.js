@@ -8,3 +8,7 @@ function ColorPlayer(colors) {
     var colorsArray = colors.split(",");
     return (colorsArray);
 }
+
+$(document).ready(function() {
+    alert("document ready");
+})
