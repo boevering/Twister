@@ -22,6 +22,7 @@ function sendFormData(e) {
     $.ajax({
         type: "POST",
         url: "php/game.php",
+        dataType: "json",
         data: {
             name: "Donald Duck",
             city: "Duckburg"
