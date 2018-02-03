@@ -13,9 +13,12 @@ else {
 		echo json_encode($arr);
 	}
 	elseif ($id == "get_users") {
-		$query = "SELECT * FROM 'User'";
+
+		$query = "SELECT * FROM 'User';";
 		$result = mysqli_query($dbtwister, $query);
-		echo json_encode($result);
+		$data = mysqli_fetch_assoc($result);
+
+		echo json_encode($data);
 	}
 
 	mysqli_close($dbtwister);
