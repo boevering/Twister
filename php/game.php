@@ -1,10 +1,11 @@
 <?php 
 
-if (isset($_POST["numberOfPlayers"]) && $_POST["numberOfPlayers"] != null){
+if (isset($_POST["numberOfPlayers"])){
 	
 	$returnData = "true";
 	$json = json_encode($returnData);
-	echo $json
+	echo $json;
+
 } else {
 
 	$returnData = "false";
