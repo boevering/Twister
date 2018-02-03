@@ -11,6 +11,7 @@ function ColorPlayer(colors) {
 
 $(document).ready(function() {
     $("#StartTwisterForm").submit(function (e) {
+        e.preventDefault();
         sendFormData(e);
     });
 });
@@ -36,7 +37,6 @@ function sendFormData(e) {
         });
 
 
-    e.preventDefault();
 
     //$.ajax({
     //        url: "game.php",
