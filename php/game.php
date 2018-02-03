@@ -1,7 +1,7 @@
 <?php 
 
 if (!isset($_POST["call_id"])) {
-	echo "fuck off"
+	echo "fuck off";
 }
 else {
 	$id = $_POST["call_id"];
