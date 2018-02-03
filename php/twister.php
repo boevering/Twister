@@ -9,9 +9,8 @@ else {
 	$id = $_POST["call_id"];
 
 	if ($id == "dummy") {
-		echo json_encode($dbtwister);
-		# $arr = array('result' => true, 'RogierWins' => false);
-		# echo json_encode($arr);
+		$arr = array('result' => true, 'RogierWins' => false);
+		echo json_encode($arr);
 	}
 	elseif ($id == "get_users") {
 
@@ -23,7 +22,7 @@ else {
 	}
 
 	mysqli_close($dbtwister);
-	echo "invalid call_id"
+	echo "invalid call_id";
 }
 
 ?>
