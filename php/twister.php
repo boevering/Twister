@@ -14,8 +14,10 @@ else {
 	}
 	elseif ($id == "get_users") {
 		$query = "SELECT * FROM 'User';";
-		$result = mysqli_query($dbtwister, $query);
-		$data = mysqli_fetch_array($result, MYSQLI_BOTH);
+		$result = mysqli_query($dbtwister, $query)
+			or die("Error: ".mysqli_error($dbtwister));
+
+		$data = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 		echo json_encode($data);
 	} else {
