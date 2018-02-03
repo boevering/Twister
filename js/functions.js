@@ -22,15 +22,13 @@ function sendFormData(e) {
 
     alert(formData);
 
-    $.ajax({
-        type: "POST",
-        data: formData,
-        url: "php/game.php",
-        done: function (response) {
-            console.log(response);
-            alert("success");
+    $.post(
+        "php/game.php",
+        formData,
+        function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
         }
-    });
+    );
 
     alert("3");
 
