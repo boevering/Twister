@@ -20,7 +20,7 @@ function sendFormData() {
 
     var formData = new FormData(this);
 
-    alert("2");
+    alert(formData);
 
     $.ajax({
         type: "POST",
