@@ -16,7 +16,7 @@ else {
 
 		$query = "SELECT * FROM 'User';";
 		$result = mysqli_query($dbtwister, $query);
-		$data = mysqli_fetch_array($result);
+		$data = mysqli_fetch_array(MYSQLI_BOTH, $result);
 
 		echo json_encode($data);
 	} else {
