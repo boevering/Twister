@@ -25,7 +25,7 @@ function sendFormData(e) {
             numberOfPlayers: $("#AmountPlayers").val(),
             numberOfColours: $("#AmountColors").val()
         }
-    }).success(function(response) {
+    }).done(function(response) {
         alert("done: " + response);
     });
 
