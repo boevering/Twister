@@ -9,8 +9,9 @@ else {
 	$id = $_POST["call_id"];
 
 	if ($id == "dummy") {
-		$arr = array('result' => true, 'RogierWins' => false);
-		echo json_encode($arr);
+		echo json_encode($dbtwister);
+		# $arr = array('result' => true, 'RogierWins' => false);
+		# echo json_encode($arr);
 	}
 	elseif ($id == "get_users") {
 

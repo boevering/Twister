@@ -11,7 +11,7 @@ function ColorPlayer(colors) {
 
 $(document).ready(function() {
     $("#SubmitStartDataButton").click(function () {
-        //sendFormData();
+        sendFormData();
         getUsers();
     });
 });
