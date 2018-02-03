@@ -10,7 +10,7 @@ function ColorPlayer(colors) {
 }
 
 $(document).ready(function() {
-    $("#SubmitStartDataButton").submit(function (e) {
+    $("#StartTwisterForm").submit(function (e) {
         sendFormData(e);
     });
 });
