@@ -9,6 +9,14 @@ $(document).onload(function () {
 
     body.insertBefore(p, firstChild);
     tick();
+
+    $.ajax({
+        url: "game.php",
+        context: document.body
+    }).done(function (responseData) {
+        $(this).addClass("done");
+    });
+
 });
 
 function tick() {
@@ -19,3 +27,5 @@ function tick() {
         document.getElementById('counter').firstChild.data = 'done';
     }
 }
+
+
