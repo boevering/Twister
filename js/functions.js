@@ -25,8 +25,6 @@ function sendFormData(e) {
             numberOfPlayers: $("#AmountPlayers").val(),
             numberOfColours: $("#AmountColors").val()
         }
-    }).always(function() {
-        alert("always");
     }).success(function(response) {
         alert("done: " + response);
     });
