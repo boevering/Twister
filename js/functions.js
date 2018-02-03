@@ -23,10 +23,7 @@ function sendFormData(e) {
         type: "POST",
         url: "php/game.php",
         dataType: "json",
-        data: {
-            name: "Donald Duck",
-            city: "Duckburg"
-        }
+        data: formData
     }).done(function (msg) {
         alert("Data Saved: " + msg);
     });
