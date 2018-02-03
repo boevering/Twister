@@ -13,7 +13,7 @@ else {
 		echo json_encode($arr);
 	}
 	elseif ($id == "get_users") {
-		$query = "SELECT * FROM User";
+		$query = "SELECT * FROM 'User'";
 		$result = mysqli_query($dbtwister, $query);
 		echo json_encode($result);
 	}
