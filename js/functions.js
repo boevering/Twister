@@ -30,7 +30,15 @@ function sendFormData(e) {
         }
     );
 
-    alert("3");
+    $.post("php/game.php",
+        {
+            name: "Donald Duck",
+            city: "Duckburg"
+        },
+        function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+
 
     e.preventDefault();
 
