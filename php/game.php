@@ -1,6 +1,6 @@
 <?php 
 
-if (isset($_POST["numberOfPlayers"]) && isset $_POST["numberOfColours"]){
+if (isset($_POST["numberOfPlayers"]) && isset($_POST["numberOfColours"])){
 	echo true;
 } else {
 	echo false;
