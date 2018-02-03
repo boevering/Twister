@@ -23,7 +23,10 @@ function sendFormData(e) {
         type: "POST",
         url: "php/game.php",
         dataType: "json",
-        data: formData
+        data: {
+            numberOfPlayers: $("#AmountPlayers").val,
+            numberOfColours: $("#AmountColors").val
+        }
     }).done(function (msg) {
         alert("Data Saved: " + msg);
     });
