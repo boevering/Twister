@@ -2,7 +2,7 @@
 
 if (isset($_POST["numberOfPlayers"])){
 	
-	$arr = array('result' => true);
+	$arr = array('result' => true, 'RogierWins' => false);
 	echo json_encode($arr);
 
 } else {
