@@ -11,8 +11,8 @@ function ColorPlayer(colors) {
 
 $(document).ready(function() {
     alert("document ready");
-})
 
-$("#SubmitStartDataButton").click(function() {
-    alert("document test");
+    $("#SubmitStartDataButton").click(function () {
+        alert("document test");
+    });
 });
