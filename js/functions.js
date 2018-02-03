@@ -10,8 +10,7 @@ function ColorPlayer(colors) {
 }
 
 $(document).ready(function() {
-    $("#StartTwisterForm").submit(function (e) {
-        e.preventDefault();
+    $("#SubmitStartDataButton").click(function () {
         sendFormData(e);
     });
 });
@@ -22,6 +21,7 @@ function sendFormData(e) {
         url: "php/game.php",
         dataType: "json",
         data: {
+            call_id: "dummy",
             numberOfPlayers: $("#AmountPlayers").val(),
             numberOfColours: $("#AmountColors").val()
         }
@@ -29,13 +29,4 @@ function sendFormData(e) {
         alert("done 1: " + response.result);
         alert("done 2: " + response.RogierWins);
     });
-
-    //$.post("php/game.php",
-    //    {
-    //        name: "Donald Duck",
-    //        city: "Duckburg"
-    //    },
-    //    function (data, status) {
-    //        alert("Data: " + data + "\nStatus: " + status);
-    //    });
 }
