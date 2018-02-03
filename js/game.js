@@ -13,9 +13,9 @@ $(document).onload(function () {
 
 function tick() {
     if (document.getElementById('counter').firstChild.data > 0) {
-        document.getElementById('counter').firstChild.data = document.getElementById('counter').firstChild.data - 1
-        setTimeout('tick()', 1000)
+        document.getElementById('counter').firstChild.data = document.getElementById('counter').firstChild.data - 1;
+        setTimeout('tick()', 1000);
     } else {
-        document.getElementById('counter').firstChild.data = 'done'
+        document.getElementById('counter').firstChild.data = 'done';
     }
 }
