@@ -2,8 +2,8 @@
 
 function receiveStartTwisterData() {
 	echo isset( $_POST[ 'formData' ] );
-  }
 }
+
 
 
 /*
