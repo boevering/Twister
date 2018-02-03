@@ -12,13 +12,14 @@ else {
 		$arr = array('result' => true, 'RogierWins' => false);
 		echo json_encode($arr);
 	}
-	elseif ($id == "get_user") {
+	elseif ($id == "get_users") {
 		$query = "SELECT * FROM User";
 		$result = mysqli_query($dbtwister, $query);
 		echo json_encode($result);
 	}
 
 	mysqli_close($dbtwister);
+	echo "invalid call_id"
 }
 
 ?>
