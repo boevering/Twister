@@ -26,7 +26,7 @@ function sendFormData(e) {
             numberOfColours: $("#AmountColors").val()
         }
     }).done(function(response) {
-        alert("done: " + response);
+        alert("done: " + response.result);
     });
 
     //$.post("php/game.php",

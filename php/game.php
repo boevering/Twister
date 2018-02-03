@@ -7,9 +7,8 @@ if (isset($_POST["numberOfPlayers"])){
 
 } else {
 
-	$returnData = "false";
-	$json = json_encode($returnData);
-	echo $json;
+	$arr = array('result' => false);
+	echo json_encode($arr);
 }
 
 
