@@ -9,14 +9,13 @@ else {
 	$id = $_POST["call_id"];
 
 	if ($id == "dummy") {
-		$arr = array('result' => true, 'RogierWins' => false);
+		$arr = array('result' => true, 'RogierAKACoffeeLady_Wins' => false);
 		echo json_encode($arr);
 	}
 	elseif ($id == "get_users") {
-
 		$query = "SELECT * FROM 'User';";
 		$result = mysqli_query($dbtwister, $query);
-		$data = mysqli_fetch_array(MYSQLI_BOTH, $result);
+		$data = mysqli_fetch_array($result, MYSQLI_BOTH);
 
 		echo json_encode($data);
 	} else {
