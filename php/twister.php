@@ -17,9 +17,12 @@ else {
 		$result = mysqli_query($dbtwister, $query)
 			or die("Error: ".mysqli_error($dbtwister));
 
-		$data = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$users = array();
+		while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+			$users[] = $data;
+		}
 
-		echo json_encode($data);
+		echo json_encode($users);
 	} else {
 		echo "invalid call_id";
 	}
