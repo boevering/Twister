@@ -10,14 +10,11 @@ $(document).onload(function () {
     body.insertBefore(p, firstChild);
     tick();
 
-    $.ajax({
-        url: "game.php",
-        context: document.body
-    }).done(function (responseData) {
-        $(this).addClass("done");
-    });
+    
 
 });
+
+
 
 function tick() {
     if (document.getElementById('counter').firstChild.data > 0) {

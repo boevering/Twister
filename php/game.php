@@ -1,4 +1,12 @@
 <?php 
+
+function receiveStartTwisterData() {
+	echo isset( $_POST[ 'formData' ] );
+  }
+}
+
+
+/*
 # Let's make sure the database is connected, use $dbtwister as database (file on server, NOT on Github!)
 require_once("../Connections/twister.php");
 # Lets use a seperate file for functions
@@ -10,6 +18,7 @@ $sessiecounter = 0;
 if(!isset($_SESSION["debug"])){
 	$_SESSION["debug"] = "0";
 };
+
 
 if(!isset($_SESSION["stage"])){
 	# get the GameID from the URL.
@@ -67,5 +76,5 @@ if($_SESSION["stage"] == "5"){
 			
 	print('<meta http-equiv="refresh" content="'.$_SESSION["refreshTimer"].'">');
 }
-
+*/
 ?>
