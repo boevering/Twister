@@ -25,8 +25,10 @@ function sendFormData(e) {
             numberOfPlayers: $("#AmountPlayers").val(),
             numberOfColours: $("#AmountColors").val()
         }
-    }).done(function (msg) {
-        alert("Data Saved: " + msg);
+    }).always(function() {
+        alert("always");
+    }).success(function(response) {
+        alert("done: " + response);
     });
 
     //$.post("php/game.php",

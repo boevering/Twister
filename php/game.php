@@ -1,9 +1,10 @@
 <?php 
 
-function receiveStartTwisterData() {
-	echo isset( $_POST[ 'formData' ] );
+if (isset($_POST["numberOfPlayers"]) && isset $_POST["numberOfColours"]){
+	echo true;
+} else {
+	echo false;
 }
-
 
 
 /*
