@@ -10,15 +10,17 @@ function ColorPlayer(colors) {
 }
 
 $(document).ready(function() {
-    alert("document ready");
-
     $("#SubmitStartDataButton").click(function () {
         sendFormData();
     });
 });
 
 function sendFormData() {
+    alert("1");
+
     var formData = new FormData(this);
+
+    alert("2");
 
     $.ajax({
         type: "POST",
@@ -39,17 +41,20 @@ function sendFormData() {
         }
     });
 
-    $.ajax({
-            url: "game.php",
-            data: $("#StartTwisterForm").serialize()
-        })
-        .done(function () {
-            alert("done");
-        })
-        .success(function () {
-            alert("success");
-        })
-        .fail(function () {
-            alert("fail");
-        });
+    alert("3");
+
+
+    //$.ajax({
+    //        url: "game.php",
+    //        data: $("#StartTwisterForm").serialize()
+    //    })
+    //    .done(function () {
+    //        alert("done");
+    //    })
+    //    .success(function () {
+    //        alert("success");
+    //    })
+    //    .fail(function () {
+    //        alert("fail");
+    //    });
 }
