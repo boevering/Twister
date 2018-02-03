@@ -11,14 +11,15 @@ function ColorPlayer(colors) {
 
 $(document).ready(function() {
     $("#SubmitStartDataButton").click(function () {
-        sendFormData();
+        //sendFormData();
+        getUsers();
     });
 });
 
 function sendFormData(e) {
     $.ajax({
         type: "POST",
-        url: "php/game.php",
+        url: "php/twister.php",
         dataType: "json",
         data: {
             call_id: "dummy",
@@ -28,5 +29,18 @@ function sendFormData(e) {
     }).done(function(response) {
         alert("done 1: " + response.result);
         alert("done 2: " + response.RogierWins);
+    });
+}
+
+function getUsers() {
+    $.ajax({
+        type: "POST",
+        url: "php/twister.php",
+        dataType: "json",
+        data: {
+            call_id: "get_users"
+        }
+    }).done(function () {
+        alert("done");
     });
 }
