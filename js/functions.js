@@ -10,39 +10,31 @@ function ColorPlayer(colors) {
 }
 
 $(document).ready(function() {
-    $("#SubmitStartDataButton").click(function () {
-        sendFormData();
+    $("#SubmitStartDataButton").submit(function (e) {
+        sendFormData(e);
     });
 });
 
-function sendFormData() {
+function sendFormData(e) {
     alert("1");
 
-    var formData = new FormData(this);
+    var formData = new FormData($("#SubmitStartDataButton"));
 
     alert(formData);
 
     $.ajax({
         type: "POST",
-        data: {
-            action: "receiveStartTwisterData",
-            newFormRecherche: formData
-        },
+        data: formData,
         url: "php/game.php",
-        success: function (response) {
+        done: function (response) {
             console.log(response);
             alert("success");
-        },
-        done: function () {
-            alert("done");
-        },
-        fail: function () {
-            alert("fail");
         }
     });
 
     alert("3");
 
+    e.preventDefault();
 
     //$.ajax({
     //        url: "game.php",
