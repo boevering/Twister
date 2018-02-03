@@ -16,11 +16,7 @@ $(document).ready(function() {
 });
 
 function sendFormData(e) {
-    alert("1");
-
-    var formData = new FormData($("#SubmitStartDataButton"));
-
-    alert(formData);
+    var formData = new FormData($("#StartTwisterForm"));
 
     $.post(
         "php/game.php",
