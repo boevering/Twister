@@ -17,15 +17,13 @@ $(document).ready(function() {
 });
 
 function sendFormData(e) {
-    var formData = new FormData($("#StartTwisterForm"));
-
     $.ajax({
         type: "POST",
         url: "php/game.php",
         dataType: "json",
         data: {
-            numberOfPlayers: $("#AmountPlayers").val,
-            numberOfColours: $("#AmountColors").val
+            numberOfPlayers: $("#AmountPlayers").val(),
+            numberOfColours: $("#AmountColors").val()
         }
     }).done(function (msg) {
         alert("Data Saved: " + msg);
