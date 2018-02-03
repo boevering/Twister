@@ -11,7 +11,7 @@ function ColorPlayer(colors) {
 
 $(document).ready(function() {
     $("#SubmitStartDataButton").click(function () {
-        sendFormData();
+        //sendFormData();
         getUsers();
     });
 });
@@ -40,7 +40,7 @@ function getUsers() {
         data: {
             call_id: "get_users"
         }
-    }).done(function () {
-        alert("done");
+    }).done(function (response) {
+        alert(response[0].Firstname);
     });
 }
