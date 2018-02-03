@@ -16,13 +16,14 @@ else {
 
 		$query = "SELECT * FROM 'User';";
 		$result = mysqli_query($dbtwister, $query);
-		$data = mysqli_fetch_assoc($result);
+		$data = mysqli_fetch_array($result);
 
 		echo json_encode($data);
+	} else {
+		echo "invalid call_id";
 	}
 
 	mysqli_close($dbtwister);
-	echo "invalid call_id";
 }
 
 ?>
