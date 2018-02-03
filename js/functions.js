@@ -19,36 +19,23 @@ $(document).ready(function() {
 function sendFormData(e) {
     var formData = new FormData($("#StartTwisterForm"));
 
-    $.post(
-        "php/game.php",
-        formData,
-        function (data, status) {
-            alert("Data: " + data + "\nStatus: " + status);
-        }
-    );
-
-    $.post("php/game.php",
-        {
+    $.ajax({
+        type: "POST",
+        url: "php/game.php",
+        data: {
             name: "Donald Duck",
             city: "Duckburg"
-        },
-        function (data, status) {
-            alert("Data: " + data + "\nStatus: " + status);
-        });
+        }
+    }).done(function (msg) {
+        alert("Data Saved: " + msg);
+    });
 
-
-
-    //$.ajax({
-    //        url: "game.php",
-    //        data: $("#StartTwisterForm").serialize()
-    //    })
-    //    .done(function () {
-    //        alert("done");
-    //    })
-    //    .success(function () {
-    //        alert("success");
-    //    })
-    //    .fail(function () {
-    //        alert("fail");
+    //$.post("php/game.php",
+    //    {
+    //        name: "Donald Duck",
+    //        city: "Duckburg"
+    //    },
+    //    function (data, status) {
+    //        alert("Data: " + data + "\nStatus: " + status);
     //    });
 }
